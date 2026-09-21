@@ -1,5 +1,6 @@
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
+import { BeforeAfterSoloSection } from './components/BeforeAfterSoloSection';
 import { LearnerProfileSection } from './components/LearnerProfileSection';
 import { StorytellingSection } from './components/StorytellingSection';
 import { OpportunitiesSection } from './components/OpportunitiesSection';
@@ -22,6 +23,7 @@ function App() {
       {/* Main Content: Sections 1 to 11 + Final CTA */}
       <main className="flex-1">
         <Hero />
+        <BeforeAfterSoloSection />
         <LearnerProfileSection />
         <StorytellingSection />
         <OpportunitiesSection />
