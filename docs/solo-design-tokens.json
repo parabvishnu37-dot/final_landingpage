@@ -1,0 +1,367 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "name": "SOLO Network Design Tokens",
+  "version": "1.0.0",
+  "description": "Design tokens extracted from the live SOLO Network web applications, production stylesheets, and learner guide.",
+  "colors": {
+    "brand": {
+      "primary": {
+        "value": "#FD4322",
+        "cssVariable": "--orange-primary",
+        "altValue": "#FF6B35",
+        "status": "exact"
+      },
+      "secondary": {
+        "value": "#FF8C42",
+        "cssVariable": "--orange-secondary",
+        "status": "exact"
+      },
+      "tertiary": {
+        "value": "#FFA726",
+        "cssVariable": "--tertiary-orange",
+        "status": "exact"
+      },
+      "dark": {
+        "value": "#E55A2B",
+        "cssVariable": "--dark-orange",
+        "altValue": "#E03719",
+        "status": "exact"
+      },
+      "lightTint": {
+        "value": "rgba(255, 107, 53, 0.1)",
+        "cssVariable": "--orange-light",
+        "altValue": "#FFF0EB",
+        "status": "exact"
+      },
+      "gradient": {
+        "value": "linear-gradient(135deg, #FF6B35, #FF8C42)",
+        "cssVariable": "--orange-gradient",
+        "status": "exact"
+      },
+      "rgb": {
+        "value": "253, 67, 34",
+        "cssVariable": "--solo-orange-rgb",
+        "status": "exact"
+      }
+    },
+    "text": {
+      "primary": {
+        "value": "#14243D",
+        "cssVariable": "--color-text",
+        "altValue": "#111827",
+        "status": "exact"
+      },
+      "secondary": {
+        "value": "#5A6B82",
+        "cssVariable": "--color-text-secondary",
+        "altValue": "#6C757D",
+        "status": "exact"
+      },
+      "muted": {
+        "value": "#94A3B8",
+        "status": "observed/approximate"
+      },
+      "inverse": {
+        "value": "#FFFFFF",
+        "status": "exact"
+      }
+    },
+    "surface": {
+      "page": {
+        "value": "#F7F8FA",
+        "altValue": "#FFFFFF",
+        "status": "exact"
+      },
+      "card": {
+        "value": "#FFFFFF",
+        "cssVariable": "--color-surface",
+        "status": "exact"
+      },
+      "cardSubtle": {
+        "value": "#FAFBFC",
+        "status": "exact"
+      },
+      "cream": {
+        "value": "#FCFCF9",
+        "cssVariable": "--color-cream-50",
+        "status": "exact"
+      }
+    },
+    "borders": {
+      "default": {
+        "value": "#E3EAF1",
+        "status": "exact"
+      },
+      "card": {
+        "value": "#DBE6F1",
+        "cssVariable": "--color-card-border",
+        "status": "exact"
+      },
+      "subtle": {
+        "value": "#EEF2F6",
+        "status": "exact"
+      },
+      "active": {
+        "value": "rgba(253, 67, 34, 0.4)",
+        "status": "exact"
+      }
+    },
+    "semantic": {
+      "success": {
+        "text": "#166534",
+        "bg": "#EAF8F1",
+        "border": "#C9EAD9",
+        "cssVariable": "--color-success",
+        "status": "exact"
+      },
+      "warning": {
+        "text": "#92400E",
+        "bg": "#FEF3C7",
+        "border": "#FDE68A",
+        "cssVariable": "--color-warning",
+        "status": "exact"
+      },
+      "error": {
+        "text": "#991B1B",
+        "bg": "#FEE2E2",
+        "border": "#FECACA",
+        "cssVariable": "--color-error",
+        "status": "exact"
+      },
+      "info": {
+        "text": "#1E40AF",
+        "bg": "#EFF6FF",
+        "border": "#BFDBFE",
+        "status": "observed/approximate"
+      }
+    }
+  },
+  "typography": {
+    "fonts": {
+      "heading": {
+        "value": "'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif",
+        "cssVariable": "--font-heading",
+        "status": "exact"
+      },
+      "body": {
+        "value": "'Roboto', -apple-system, BlinkMacSystemFont, sans-serif",
+        "cssVariable": "--font-body",
+        "status": "exact"
+      },
+      "mono": {
+        "value": "'Berkeley Mono', 'Roboto Mono', ui-monospace, monospace",
+        "cssVariable": "--font-family-mono",
+        "status": "exact"
+      }
+    },
+    "sizes": {
+      "hero": {
+        "value": "3.25rem",
+        "pixelEquivalent": "52px",
+        "status": "exact"
+      },
+      "h1": {
+        "value": "2.25rem",
+        "pixelEquivalent": "36px",
+        "status": "exact"
+      },
+      "h2": {
+        "value": "1.75rem",
+        "pixelEquivalent": "28px",
+        "status": "exact"
+      },
+      "h3": {
+        "value": "1.35rem",
+        "pixelEquivalent": "22px",
+        "status": "exact"
+      },
+      "h4": {
+        "value": "1.0rem",
+        "pixelEquivalent": "16px",
+        "status": "exact"
+      },
+      "bodyLarge": {
+        "value": "1.125rem",
+        "pixelEquivalent": "18px",
+        "status": "exact"
+      },
+      "bodyBase": {
+        "value": "0.9375rem",
+        "pixelEquivalent": "15px",
+        "status": "exact"
+      },
+      "bodySmall": {
+        "value": "0.8125rem",
+        "pixelEquivalent": "13px",
+        "status": "exact"
+      },
+      "badge": {
+        "value": "0.6875rem",
+        "pixelEquivalent": "11px",
+        "status": "exact"
+      }
+    },
+    "weights": {
+      "regular": { "value": 400, "status": "exact" },
+      "medium": { "value": 500, "status": "exact" },
+      "semibold": { "value": 600, "status": "exact" },
+      "bold": { "value": 700, "status": "exact" },
+      "black": { "value": 900, "status": "exact" }
+    },
+    "lineHeights": {
+      "tight": { "value": 1.15, "status": "exact" },
+      "normal": { "value": 1.5, "status": "exact" },
+      "relaxed": { "value": 1.625, "status": "exact" }
+    },
+    "letterSpacing": {
+      "tight": { "value": "-0.015em", "status": "exact" },
+      "normal": { "value": "0em", "status": "exact" },
+      "wide": { "value": "0.14em", "status": "exact" }
+    }
+  },
+  "spacing": {
+    "scale": {
+      "0": "0px",
+      "1": "4px",
+      "2": "8px",
+      "3": "12px",
+      "4": "16px",
+      "5": "20px",
+      "6": "24px",
+      "8": "32px",
+      "10": "40px",
+      "12": "48px",
+      "16": "64px",
+      "20": "80px",
+      "24": "96px",
+      "28": "112px"
+    },
+    "sectionPaddingY": {
+      "compact": { "value": "48px", "status": "exact" },
+      "standard": { "value": "80px", "status": "exact" },
+      "large": { "value": "112px", "status": "exact" }
+    },
+    "containerPaddingX": {
+      "mobile": { "value": "16px", "status": "exact" },
+      "tablet": { "value": "24px", "status": "exact" },
+      "desktop": { "value": "32px", "status": "exact" }
+    }
+  },
+  "radii": {
+    "sm": { "value": "6px", "cssVariable": "--radius-sm", "status": "exact" },
+    "base": { "value": "8px", "cssVariable": "--radius-base", "status": "exact" },
+    "md": { "value": "10px", "cssVariable": "--radius-md", "status": "exact" },
+    "lg": { "value": "12px", "cssVariable": "--radius-lg", "status": "exact" },
+    "xl": { "value": "16px", "status": "exact" },
+    "card": { "value": "18px", "status": "exact" },
+    "frame": { "value": "20px", "status": "exact" },
+    "pill": { "value": "9999px", "cssVariable": "--radius-full", "status": "exact" }
+  },
+  "shadows": {
+    "xs": {
+      "value": "0 1px 2px rgba(0, 0, 0, 0.02)",
+      "cssVariable": "--shadow-xs",
+      "status": "exact"
+    },
+    "sm": {
+      "value": "0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02)",
+      "cssVariable": "--shadow-sm",
+      "status": "exact"
+    },
+    "md": {
+      "value": "0 4px 6px -1px rgba(0, 0, 0, 0.04), 0 2px 4px -1px rgba(0, 0, 0, 0.02)",
+      "cssVariable": "--shadow-md",
+      "status": "exact"
+    },
+    "showcase": {
+      "value": "0 24px 60px rgba(20, 36, 61, 0.08)",
+      "status": "exact"
+    },
+    "buttonPrimary": {
+      "value": "0 8px 20px rgba(253, 67, 34, 0.22)",
+      "status": "exact"
+    },
+    "cardHover": {
+      "value": "0 10px 26px rgba(249, 115, 22, 0.15)",
+      "status": "exact"
+    },
+    "dropdown": {
+      "value": "0 12px 32px rgba(20, 36, 61, 0.12)",
+      "status": "exact"
+    }
+  },
+  "layout": {
+    "maxWidth": {
+      "standard": { "value": "1200px", "status": "exact" },
+      "wide": { "value": "1280px", "status": "exact" },
+      "showcase": { "value": "1140px", "status": "exact" },
+      "prose": { "value": "768px", "status": "exact" }
+    },
+    "headerHeight": {
+      "value": "68px",
+      "status": "exact"
+    },
+    "sidebarWidth": {
+      "value": "not-observed",
+      "comment": "Main platform uses top header navigation; learner dashboard has no permanent left sidebar."
+    }
+  },
+  "components": {
+    "button": {
+      "padding": "12px 24px",
+      "borderRadius": "12px",
+      "fontWeight": 700,
+      "fontSize": "14px",
+      "transition": "all 150ms ease-out",
+      "status": "exact"
+    },
+    "card": {
+      "background": "#FFFFFF",
+      "border": "1px solid #E3EAF1",
+      "borderRadius": "18px - 20px",
+      "padding": "20px - 24px",
+      "status": "exact"
+    },
+    "badge": {
+      "padding": "4px 12px",
+      "borderRadius": "9999px",
+      "fontSize": "11px",
+      "fontWeight": 800,
+      "letterSpacing": "0.14em",
+      "status": "exact"
+    },
+    "activeTab": {
+      "background": "#FFF0EB",
+      "color": "#FD4322",
+      "borderRadius": "12px",
+      "fontWeight": 700,
+      "status": "exact"
+    },
+    "input": {
+      "background": "#FFFFFF",
+      "border": "1px solid #DBE6F1",
+      "borderRadius": "12px",
+      "padding": "10px 16px",
+      "focusRing": "0 0 0 3px rgba(253, 67, 34, 0.2)",
+      "status": "exact"
+    }
+  },
+  "responsive": {
+    "breakpoints": {
+      "sm": "640px",
+      "md": "768px",
+      "lg": "1024px",
+      "xl": "1280px"
+    },
+    "navigationCollapse": {
+      "breakpoint": "768px",
+      "type": "hamburger-drawer",
+      "status": "exact"
+    },
+    "tableDashboardScroll": {
+      "behavior": "overflow-x-auto scrollbar-thin",
+      "breakpoint": "768px",
+      "status": "exact"
+    }
+  }
+}

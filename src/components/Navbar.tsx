@@ -17,12 +17,12 @@ export const Navbar = () => {
         {/* Left: Actual SOLO Logo */}
         <a href="#top" className="flex items-center gap-2 transition-opacity hover:opacity-90" aria-label="SOLO home">
           <img
-            src="/solo-logo.svg"
+            src="/solo-assets/images/solo.png"
             alt="SOLO"
             className="h-8 w-auto object-contain object-left"
             onError={(e) => {
-              // fallback to png if svg fails
-              (e.currentTarget as HTMLImageElement).src = '/solo-logo.png';
+              // fallback to svg/png if asset fails
+              (e.currentTarget as HTMLImageElement).src = '/solo-logo.svg';
             }}
           />
         </a>

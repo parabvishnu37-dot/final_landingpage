@@ -21,6 +21,18 @@ export const FinalCTASection: React.FC = () => {
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
         
+        {/* Authentic SOLO Wordmark */}
+        <div className="flex justify-center mb-6">
+          <img
+            src="/solo-assets/images/solo.png"
+            alt="SOLO"
+            className="h-8 w-auto object-contain opacity-90"
+            onError={(e) => {
+              (e.currentTarget as HTMLImageElement).style.display = 'none';
+            }}
+          />
+        </div>
+
         {/* Minimal Visual Connection Above CTA: PROFILE → SKILLS → OPPORTUNITIES → PROOF → CAREER */}
         <div className="inline-flex flex-wrap items-center justify-center gap-2 sm:gap-3 rounded-full border border-[#E3EAF1] bg-[#FAFBFC] px-5 py-2 mb-10 shadow-2xs">
           {progression.map((item, idx) => (

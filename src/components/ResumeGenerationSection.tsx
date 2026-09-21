@@ -159,25 +159,8 @@ export const ResumeGenerationSection: React.FC = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 max-w-[1240px] mx-auto">
               
               {/* Card 1: Resume Generation on Profile (PDF Page 26) */}
-              <div className="rounded-[20px] border border-[#DBE6F1] bg-white p-3 sm:p-5 shadow-[0_20px_50px_rgba(20,36,61,0.06)] flex flex-col justify-between">
+              <div className="rounded-[20px] border border-[#DBE6F1] bg-white p-4 sm:p-5 shadow-[0_24px_60px_rgba(20,36,61,0.08)] flex flex-col justify-between">
                 <div>
-                  {/* Window Chrome Header */}
-                  <div className="flex items-center justify-between px-3 py-2 border-b border-[#E8EEF3] mb-4 bg-[#FAFBFC] rounded-t-[14px]">
-                    <div className="flex items-center gap-1.5">
-                      <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f56]" />
-                      <span className="h-2.5 w-2.5 rounded-full bg-[#ffbd2e]" />
-                      <span className="h-2.5 w-2.5 rounded-full bg-[#27c93f]" />
-                    </div>
-
-                    <div className="rounded-md bg-white border border-[#E3EAF1] px-3 py-0.5 text-[11px] font-mono text-[#5A6B82] shadow-2xs truncate max-w-[200px] sm:max-w-[260px]">
-                      app.solonetwork.org/profile/resume
-                    </div>
-
-                    <span className="inline-flex items-center gap-1 rounded-full bg-[#fff1ec] border border-[#f8d1c6] px-2 py-0.5 text-[10px] font-extrabold text-[#FD4322]">
-                      <span>01 · Generate</span>
-                    </span>
-                  </div>
-
                   {/* Screenshot Container with Responsive Horizontal Scrolling on Mobile */}
                   <div className="w-full overflow-x-auto scrollbar-thin rounded-xl bg-white border border-[#E5E7EB] p-1.5 sm:p-2">
                     <div className="min-w-[500px] sm:min-w-0">
@@ -199,25 +182,8 @@ export const ResumeGenerationSection: React.FC = () => {
               </div>
 
               {/* Card 2: Resume Template Selection (PDF Page 27) */}
-              <div className="rounded-[20px] border border-[#DBE6F1] bg-white p-3 sm:p-5 shadow-[0_20px_50px_rgba(20,36,61,0.06)] flex flex-col justify-between">
+              <div className="rounded-[20px] border border-[#DBE6F1] bg-white p-4 sm:p-5 shadow-[0_24px_60px_rgba(20,36,61,0.08)] flex flex-col justify-between">
                 <div>
-                  {/* Window Chrome Header */}
-                  <div className="flex items-center justify-between px-3 py-2 border-b border-[#E8EEF3] mb-4 bg-[#FAFBFC] rounded-t-[14px]">
-                    <div className="flex items-center gap-1.5">
-                      <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f56]" />
-                      <span className="h-2.5 w-2.5 rounded-full bg-[#ffbd2e]" />
-                      <span className="h-2.5 w-2.5 rounded-full bg-[#27c93f]" />
-                    </div>
-
-                    <div className="rounded-md bg-white border border-[#E3EAF1] px-3 py-0.5 text-[11px] font-mono text-[#5A6B82] shadow-2xs truncate max-w-[200px] sm:max-w-[260px]">
-                      app.solonetwork.org/profile/resume/templates
-                    </div>
-
-                    <span className="inline-flex items-center gap-1 rounded-full bg-[#eaf8f1] border border-[#c9ead9] px-2 py-0.5 text-[10px] font-extrabold text-[#16a36a]">
-                      <span>02 · Templates</span>
-                    </span>
-                  </div>
-
                   {/* Screenshot Container with Responsive Horizontal Scrolling on Mobile */}
                   <div className="w-full overflow-x-auto scrollbar-thin rounded-xl bg-white border border-[#E5E7EB] p-1.5 sm:p-2">
                     <div className="min-w-[500px] sm:min-w-0">
@@ -243,25 +209,7 @@ export const ResumeGenerationSection: React.FC = () => {
 
           {/* VIEW 2: Full-Width Profile View (PDF Page 26) */}
           {activeView === 'profile' && (
-            <div className="max-w-[1140px] mx-auto rounded-[20px] border border-[#DBE6F1] bg-white p-3 sm:p-6 shadow-[0_24px_60px_rgba(20,36,61,0.08)]">
-              {/* Window Chrome Header */}
-              <div className="flex items-center justify-between px-3 py-2.5 border-b border-[#E8EEF3] mb-4 sm:mb-6 bg-[#FAFBFC] rounded-t-[14px]">
-                <div className="flex items-center gap-1.5">
-                  <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f56]" />
-                  <span className="h-2.5 w-2.5 rounded-full bg-[#ffbd2e]" />
-                  <span className="h-2.5 w-2.5 rounded-full bg-[#27c93f]" />
-                </div>
-
-                <div className="rounded-lg bg-white border border-[#E3EAF1] px-4 py-1 text-[11px] font-mono text-[#5A6B82] shadow-2xs flex items-center gap-2 max-w-[380px] w-full justify-center">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#FD4322]" />
-                  <span className="truncate">app.solonetwork.org/profile/resume</span>
-                </div>
-
-                <span className="hidden sm:inline-flex items-center gap-1 rounded-full bg-[#fff1ec] border border-[#f8d1c6] px-2.5 py-0.5 text-[10px] font-extrabold text-[#FD4322]">
-                  <span>Step 1: Generate Resume</span>
-                </span>
-              </div>
-
+            <div className="max-w-[1140px] mx-auto rounded-[20px] border border-[#DBE6F1] bg-white p-4 sm:p-6 shadow-[0_24px_60px_rgba(20,36,61,0.08)]">
               {/* Full-width Screenshot Container */}
               <div className="w-full overflow-x-auto scrollbar-thin rounded-xl bg-white border border-[#E5E7EB] p-2 sm:p-4">
                 <div className="min-w-[720px] sm:min-w-0 flex flex-col items-center justify-center">
@@ -288,25 +236,7 @@ export const ResumeGenerationSection: React.FC = () => {
 
           {/* VIEW 3: Full-Width Template Selection (PDF Page 27) */}
           {activeView === 'templates' && (
-            <div className="max-w-[1140px] mx-auto rounded-[20px] border border-[#DBE6F1] bg-white p-3 sm:p-6 shadow-[0_24px_60px_rgba(20,36,61,0.08)]">
-              {/* Window Chrome Header */}
-              <div className="flex items-center justify-between px-3 py-2.5 border-b border-[#E8EEF3] mb-4 sm:mb-6 bg-[#FAFBFC] rounded-t-[14px]">
-                <div className="flex items-center gap-1.5">
-                  <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f56]" />
-                  <span className="h-2.5 w-2.5 rounded-full bg-[#ffbd2e]" />
-                  <span className="h-2.5 w-2.5 rounded-full bg-[#27c93f]" />
-                </div>
-
-                <div className="rounded-lg bg-white border border-[#E3EAF1] px-4 py-1 text-[11px] font-mono text-[#5A6B82] shadow-2xs flex items-center gap-2 max-w-[380px] w-full justify-center">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#16a36a]" />
-                  <span className="truncate">app.solonetwork.org/profile/resume/templates</span>
-                </div>
-
-                <span className="hidden sm:inline-flex items-center gap-1 rounded-full bg-[#eaf8f1] border border-[#c9ead9] px-2.5 py-0.5 text-[10px] font-extrabold text-[#16a36a]">
-                  <span>Step 2: Template Selection</span>
-                </span>
-              </div>
-
+            <div className="max-w-[1140px] mx-auto rounded-[20px] border border-[#DBE6F1] bg-white p-4 sm:p-6 shadow-[0_24px_60px_rgba(20,36,61,0.08)]">
               {/* Full-width Screenshot Container */}
               <div className="w-full overflow-x-auto scrollbar-thin rounded-xl bg-white border border-[#E5E7EB] p-2 sm:p-4">
                 <div className="min-w-[720px] sm:min-w-0 flex flex-col items-center justify-center">

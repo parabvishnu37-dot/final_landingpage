@@ -289,7 +289,7 @@ export const LearnerProfileSection: React.FC = () => {
                       alt="Vishnu Parab"
                       className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl object-cover border-4 border-white shadow-md bg-white"
                       onError={(e) => {
-                        (e.currentTarget as HTMLImageElement).src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80"%3E%3Crect width="80" height="80" rx="16" fill="%23FD4322"/%3E%3Ctext x="40" y="48" fill="white" font-size="24" font-weight="bold" text-anchor="middle"%3EVP%3C/text%3E%3C/svg%3E';
+                        (e.currentTarget as HTMLImageElement).src = '/solo-assets/images/Student.png';
                       }}
                     />
                     <span className="absolute bottom-1 right-1 w-4 h-4 rounded-full bg-[#16a36a] border-2 border-white shadow-xs" />
@@ -419,13 +419,22 @@ export const LearnerProfileSection: React.FC = () => {
               {activeTab === 'overview' && (
                 <div className="space-y-5 animate-fadeIn">
                   {/* About Section */}
-                  <div className="rounded-2xl border border-[#E3EAF1] bg-[#F7F9FC] p-4 sm:p-5">
-                    <h4 className="text-[12px] font-extrabold uppercase tracking-wider text-[#64748B] mb-2">
-                      About
-                    </h4>
-                    <p className="text-[14px] leading-relaxed font-semibold text-[#14243D]">
-                      Product-focused technology learner building experiences at the intersection of design, AI and software.
-                    </p>
+                  <div className="rounded-2xl border border-[#E3EAF1] bg-[#F7F9FC] p-4 sm:p-5 flex items-center justify-between gap-4">
+                    <div>
+                      <h4 className="text-[12px] font-extrabold uppercase tracking-wider text-[#64748B] mb-2">
+                        About
+                      </h4>
+                      <p className="text-[14px] leading-relaxed font-semibold text-[#14243D]">
+                        Product-focused technology learner building experiences at the intersection of design, AI and software.
+                      </p>
+                    </div>
+                    <div className="hidden sm:block flex-shrink-0">
+                      <img 
+                        src="/solo-assets/images/Student.png" 
+                        alt="SOLO Learner" 
+                        className="w-16 h-16 sm:w-20 sm:h-20 object-contain rounded-xl bg-white/70 p-1 border border-[#E3EAF1] shadow-2xs" 
+                      />
+                    </div>
                   </div>
 
                   {/* Acquired Skills */}

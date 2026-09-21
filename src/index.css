@@ -10,7 +10,12 @@
   body {
     background-color: #F7F8FA;
     color: #14243D;
+    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
     font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
   }
 }
 

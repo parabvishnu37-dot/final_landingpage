@@ -23,7 +23,10 @@ export default {
         }
       },
       fontFamily: {
-        sans: ['"Plus Jakarta Sans"', 'Inter', 'system-ui', 'sans-serif'],
+        sans: ['Roboto', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+        heading: ['Montserrat', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+        body: ['Roboto', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+        mono: ['"Berkeley Mono"', '"Roboto Mono"', 'ui-monospace', 'monospace'],
       },
       boxShadow: {
         'card-sm': '0 2px 8px rgba(20, 36, 61, 0.04)',

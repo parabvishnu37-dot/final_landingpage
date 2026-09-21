@@ -4,8 +4,7 @@ import {
   Eye, 
   ShieldCheck, 
   Layers, 
-  Share2, 
-  Smartphone 
+  Share2 
 } from 'lucide-react';
 
 export const CredentialWalletSection: React.FC = () => {
@@ -85,20 +84,8 @@ export const CredentialWalletSection: React.FC = () => {
         {/* ======================================================== */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center max-w-[1140px] mx-auto mb-14 sm:mb-16">
           
-          {/* LEFT: Actual SOLO Credential Wallet Screenshot Frame */}
-          <div className="lg:col-span-6 rounded-[20px] border border-[#DBE6F1] bg-white p-3 sm:p-5 shadow-[0_24px_60px_rgba(20,36,61,0.08)]">
-            
-            {/* Window / App Chrome Header */}
-            <div className="flex items-center justify-between px-3 py-2 border-b border-[#E8EEF3] mb-4 bg-[#FAFBFC] rounded-t-[14px]">
-              <div className="flex items-center gap-2 text-[#5A6B82]">
-                <Smartphone className="w-4 h-4 text-[#FD4322]" />
-                <span className="text-[12px] font-bold text-[#14243D]">SOLO Mobile Wallet</span>
-              </div>
-
-              <span className="inline-flex items-center gap-1 rounded-full bg-[#eaf8f1] border border-[#c9ead9] px-2.5 py-0.5 text-[10.5px] font-extrabold text-[#16a36a]">
-                <span>Google Play Store</span>
-              </span>
-            </div>
+          {/* LEFT: Actual SOLO Credential Wallet Screenshot Container */}
+          <div className="lg:col-span-6 rounded-[20px] border border-[#DBE6F1] bg-white p-4 sm:p-5 shadow-[0_24px_60px_rgba(20,36,61,0.08)]">
 
             {/* Screenshot Container with Responsive Handling */}
             <div className="w-full overflow-hidden rounded-xl bg-white border border-[#E5E7EB] p-2 sm:p-4 flex items-center justify-center">

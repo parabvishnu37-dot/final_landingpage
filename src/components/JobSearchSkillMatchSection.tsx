@@ -111,26 +111,7 @@ export const JobSearchSkillMatchSection: React.FC = () => {
           {/* -------------------------------------------------------- */}
           {/* LEFT SIDE: Actual SOLO Skill Match Screenshot Card */}
           {/* -------------------------------------------------------- */}
-          <div className="lg:col-span-6 rounded-[20px] border border-[#DBE6F1] bg-white p-3 sm:p-5 shadow-[0_24px_60px_rgba(20,36,61,0.08)]">
-            
-            {/* Window Chrome Header */}
-            <div className="flex items-center justify-between px-3 py-2.5 border-b border-[#E8EEF3] mb-4 bg-[#FAFBFC] rounded-t-[14px]">
-              <div className="flex items-center gap-1.5">
-                <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f56]" />
-                <span className="h-2.5 w-2.5 rounded-full bg-[#ffbd2e]" />
-                <span className="h-2.5 w-2.5 rounded-full bg-[#27c93f]" />
-              </div>
-
-              {/* URL Bar */}
-              <div className="rounded-lg bg-white border border-[#E3EAF1] px-3 py-1 text-[11px] font-mono text-[#5A6B82] shadow-2xs truncate max-w-[240px] sm:max-w-[300px]">
-                app.solonetwork.org/jobs/junior-developer
-              </div>
-
-              {/* Match Badge */}
-              <span className="inline-flex items-center gap-1 rounded-full bg-[#eaf8f1] border border-[#c9ead9] px-2.5 py-0.5 text-[10.5px] font-extrabold text-[#16a36a]">
-                <span>52.26% Match</span>
-              </span>
-            </div>
+          <div className="lg:col-span-6 rounded-[20px] border border-[#DBE6F1] bg-white p-4 sm:p-5 shadow-[0_24px_60px_rgba(20,36,61,0.08)]">
 
             {/* Scrollable Container with Custom Scrollbar */}
             <div className="relative rounded-xl border border-[#E5E7EB] bg-white overflow-hidden">
@@ -284,9 +265,15 @@ export const JobSearchSkillMatchSection: React.FC = () => {
               
               <div className="flex items-center justify-between mb-4">
                 <div>
-                  <div className="inline-flex items-center gap-1.5 text-[11px] font-extrabold uppercase tracking-wider text-[#FD4322] mb-1">
-                    <Sparkles className="w-3.5 h-3.5" />
-                    <span>SKILL MATCH AI</span>
+                  <div className="inline-flex items-center gap-2 mb-1.5">
+                    <img 
+                      src="/solo-assets/images/aipowered.png" 
+                      alt="AI Powered" 
+                      className="h-5 sm:h-6 w-auto object-contain"
+                    />
+                    <span className="text-[11px] font-extrabold uppercase tracking-wider text-[#FD4322]">
+                      SKILL MATCH AI
+                    </span>
                   </div>
                   <h3 className="text-xl font-black text-[#14243D]">
                     What&apos;s next?

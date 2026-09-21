@@ -30,11 +30,11 @@ export const Footer: React.FC = () => {
           <div className="lg:col-span-2 space-y-4">
             <a href="#top" className="inline-block transition-opacity hover:opacity-90" aria-label="SOLO home">
               <img
-                src="/solo-logo.svg"
+                src="/solo-assets/images/solo.png"
                 alt="SOLO"
                 className="h-8 w-auto object-contain object-left"
                 onError={(e) => {
-                  (e.currentTarget as HTMLImageElement).src = '/solo-logo.png';
+                  (e.currentTarget as HTMLImageElement).src = '/solo-logo.svg';
                 }}
               />
             </a>

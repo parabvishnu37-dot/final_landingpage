@@ -76,22 +76,8 @@ export const ProductDashboard: React.FC = () => {
       {/* ======================================================== */}
       {/* Main Product Dashboard Preview Card (Compact Landscape Snapshot) */}
       {/* ======================================================== */}
-      <div className="relative overflow-hidden rounded-[22px] border border-[#dbe6f1] bg-white p-4 sm:p-5 shadow-[0_20px_50px_rgba(20,36,61,0.08)] transition-all">
-        {/* Window Chrome Header */}
-        <div className="flex items-center justify-between border-b border-[#e8eef3] pb-2.5">
-          <div className="flex items-center gap-1.5">
-            <span className="h-2 w-2 rounded-full bg-[#ff5f56]" />
-            <span className="h-2 w-2 rounded-full bg-[#ffbd2e]" />
-            <span className="h-2 w-2 rounded-full bg-[#27c93f]" />
-            <span className="ml-2 text-[11px] font-bold text-[#64748B]">
-              SOLO Platform
-            </span>
-          </div>
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-[#eaf8f1] px-2 py-0.5 text-[10px] font-extrabold text-[#128455]">
-            <span className="h-1.5 w-1.5 rounded-full bg-[#16a36a]" />
-            Active Track
-          </span>
-        </div>
+      <div className="relative overflow-hidden rounded-[20px] border border-[#DBE6F1] bg-white p-4 sm:p-5 shadow-[0_24px_60px_rgba(20,36,61,0.08)] transition-all">
+
 
         {/* Dashboard Body Content: Exactly the 3 requested sections */}
         <div className="mt-3.5 space-y-3">

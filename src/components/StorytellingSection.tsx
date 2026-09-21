@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ArrowRight, Compass, Hammer, Award, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, Compass, Hammer, Award } from 'lucide-react';
 
 interface ShowcaseState {
   id: string;
@@ -10,7 +10,6 @@ interface ShowcaseState {
   description: string;
   ctaText: string;
   ctaHref: string;
-  urlPath: string;
   screenshot: string;
   icon: React.ComponentType<{ className?: string }>;
 }
@@ -28,7 +27,6 @@ export const StorytellingSection: React.FC = () => {
       description: 'Explore courses, internships, live projects, hackathons and career pathways.',
       ctaText: 'Explore workflow',
       ctaHref: '#explore',
-      urlPath: 'app.solonetwork.org/explore/opportunities',
       screenshot: '/screenshots/opportunities-explore.png',
       icon: Compass,
     },
@@ -41,7 +39,6 @@ export const StorytellingSection: React.FC = () => {
       description: "Complete the work, submit evidence and demonstrate the skills you've built.",
       ctaText: 'Explore workflow',
       ctaHref: '#build',
-      urlPath: 'app.solonetwork.org/enrollments/request-completion',
       screenshot: '/guide-screenshots/p19_build_clean_modal.png',
       icon: Hammer,
     },
@@ -54,7 +51,6 @@ export const StorytellingSection: React.FC = () => {
       description: 'Once your completion is verified, your achievement becomes part of your SOLO profile.',
       ctaText: 'View credential',
       ctaHref: '#credentials',
-      urlPath: 'app.solonetwork.org/credentials/wallet',
       screenshot: '/screenshots/credential-wallet.png',
       icon: Award,
     },
@@ -153,27 +149,6 @@ export const StorytellingSection: React.FC = () => {
         {/* ======================================================== */}
         <div className="max-w-[1100px] mx-auto mb-6">
           <div className="relative rounded-[20px] border border-[#DBE6F1] bg-white p-3 sm:p-4 shadow-[0_24px_60px_rgba(20,36,61,0.08)] overflow-hidden">
-            
-            {/* Window Chrome Header */}
-            <div className="flex items-center justify-between px-3 py-2.5 border-b border-[#E8EEF3] mb-3 bg-[#FAFBFC] rounded-t-[14px]">
-              <div className="flex items-center gap-1.5">
-                <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f56]" />
-                <span className="h-2.5 w-2.5 rounded-full bg-[#ffbd2e]" />
-                <span className="h-2.5 w-2.5 rounded-full bg-[#27c93f]" />
-              </div>
-              
-              {/* Browser URL Bar */}
-              <div className="rounded-lg bg-white border border-[#E3EAF1] px-4 py-1 text-[11px] font-mono text-[#5A6B82] shadow-2xs flex items-center gap-2 max-w-[340px] w-full justify-center">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#16a36a]" />
-                <span className="truncate">{currentState.urlPath}</span>
-              </div>
-
-              {/* Status Badge */}
-              <span className="inline-flex items-center gap-1 rounded-full bg-[#eaf8f1] border border-[#c9ead9] px-2.5 py-0.5 text-[10px] font-extrabold text-[#16a36a]">
-                <CheckCircle2 className="w-3 h-3" />
-                <span>SOLO Verified</span>
-              </span>
-            </div>
 
             {/* Fixed-Size Screenshot Display Area with Smooth 200ms Crossfade */}
             <div className="relative w-full h-[320px] sm:h-[440px] md:h-[500px] lg:h-[550px] rounded-[14px] bg-[#F7F9FC] border border-slate-100 overflow-hidden">
