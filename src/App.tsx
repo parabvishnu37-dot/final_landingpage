@@ -12,6 +12,7 @@ import { CredentialWalletSection } from './components/CredentialWalletSection';
 import { SocialPlatformSection } from './components/SocialPlatformSection';
 import { FinalCTASection } from './components/FinalCTASection';
 import { Footer } from './components/Footer';
+import { AIChatbot } from './components/AIChatbot';
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
 
       {/* Professional SaaS Footer */}
       <Footer />
+      <AIChatbot />
     </div>
   );
 }
