@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+  
+  body {
+    background-color: #F7F8FA;
+    color: #14243D;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+}
+
+/* Crisp SaaS Card & UI components */
+.solo-card {
+  background-color: #FFFFFF;
+  border: 1px solid #E3EAF1;
+  box-shadow: 0 10px 30px rgba(20, 36, 61, 0.05);
+  border-radius: 20px;
+}
+
+.solo-card-elevated {
+  background-color: #FFFFFF;
+  border: 1px solid #DBE6F1;
+  box-shadow: 0 20px 50px rgba(20, 36, 61, 0.08);
+  border-radius: 24px;
+}
+
+.solo-floating-card {
+  background-color: #FFFFFF;
+  border: 1px solid #E3EAF1;
+  box-shadow: 0 16px 36px -6px rgba(20, 36, 61, 0.12), 0 0 0 1px rgba(227, 234, 241, 0.7);
+  border-radius: 16px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.solo-floating-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 40px -6px rgba(20, 36, 61, 0.16), 0 0 0 1px rgba(253, 67, 34, 0.3);
+}
+
+/* Buttons */
+.btn-primary-solo {
+  background-color: #FD4322;
+  color: #FFFFFF;
+  font-weight: 800;
+  box-shadow: 0 6px 18px rgba(253, 67, 34, 0.24);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-primary-solo:hover {
+  background-color: #e83b1c;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(253, 67, 34, 0.32);
+}
+
+.btn-secondary-solo {
+  background-color: #FFFFFF;
+  color: #14243D;
+  border: 1px solid #D7E3F0;
+  font-weight: 700;
+  box-shadow: 0 2px 6px rgba(20, 36, 61, 0.03);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-secondary-solo:hover {
+  border-color: #FD4322;
+  color: #FD4322;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(20, 36, 61, 0.06);
+}
+
+/* Tab Transitions & Utilities */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
