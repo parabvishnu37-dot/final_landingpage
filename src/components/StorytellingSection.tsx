@@ -22,36 +22,36 @@ export const StorytellingSection: React.FC = () => {
       id: 'explore',
       stepNumber: '01',
       tabTitle: '01 — EXPLORE',
-      tabCaption: "Find what's worth learning.",
-      heading: "Find what's worth learning.",
-      description: 'Explore courses, internships, live projects, hackathons and career pathways.',
-      ctaText: 'Explore workflow',
-      ctaHref: '#explore',
-      screenshot: '/screenshots/opportunities-explore.png',
+      tabCaption: "Discover what's next.",
+      heading: "Discover what's next.",
+      description: 'Explore courses, internships, projects, hackathons and opportunities that match where you want to go.',
+      ctaText: 'Explore opportunities',
+      ctaHref: '#opportunities',
+      screenshot: '/screenshots/stage-01-explore.png',
       icon: Compass,
     },
     {
       id: 'build',
       stepNumber: '02',
       tabTitle: '02 — BUILD',
-      tabCaption: 'Turn learning into experience.',
-      heading: 'Turn learning into experience.',
-      description: "Complete the work, submit evidence and demonstrate the skills you've built.",
-      ctaText: 'Explore workflow',
-      ctaHref: '#build',
-      screenshot: '/guide-screenshots/p19_build_clean_modal.png',
+      tabCaption: 'Build with real experience.',
+      heading: 'Build with real experience.',
+      description: 'Apply what you learn through live projects and practical experiences.',
+      ctaText: 'Explore live projects',
+      ctaHref: '#opportunities',
+      screenshot: '/screenshots/stage-02-build.png',
       icon: Hammer,
     },
     {
       id: 'prove',
       stepNumber: '03',
       tabTitle: '03 — PROVE',
-      tabCaption: 'Earn verified credentials.',
-      heading: 'Earn verified credentials.',
-      description: 'Once your completion is verified, your achievement becomes part of your SOLO profile.',
+      tabCaption: 'Prove what you can do.',
+      heading: 'Prove what you can do.',
+      description: "Build a record of verified credentials and achievements that showcase the skills you've developed.",
       ctaText: 'View credential',
-      ctaHref: '#credentials',
-      screenshot: '/screenshots/credential-wallet.png',
+      ctaHref: '#credential-wallet',
+      screenshot: '/screenshots/stage-03-prove.png',
       icon: Award,
     },
   ];
@@ -151,7 +151,7 @@ export const StorytellingSection: React.FC = () => {
           <div className="relative rounded-[20px] border border-[#DBE6F1] bg-white p-3 sm:p-4 shadow-[0_24px_60px_rgba(20,36,61,0.08)] overflow-hidden">
 
             {/* Fixed-Size Screenshot Display Area with Smooth 200ms Crossfade */}
-            <div className="relative w-full h-[320px] sm:h-[440px] md:h-[500px] lg:h-[550px] rounded-[14px] bg-[#F7F9FC] border border-slate-100 overflow-hidden">
+            <div className="relative w-full aspect-[16/10] min-h-[300px] sm:min-h-[420px] md:min-h-[500px] lg:min-h-[580px] rounded-[14px] bg-[#F7F9FC] border border-slate-100 overflow-hidden">
               {states.map((state, idx) => {
                 const isSelected = activeStepIndex === idx;
 
@@ -160,7 +160,7 @@ export const StorytellingSection: React.FC = () => {
                     key={state.id}
                     src={state.screenshot}
                     alt={`SOLO ${state.tabTitle} - ${state.heading}`}
-                    className={`absolute inset-0 w-full h-full object-cover object-top transition-opacity duration-200 ease-in-out ${
+                    className={`absolute inset-0 w-full h-full object-contain object-top transition-opacity duration-200 ease-in-out ${
                       isSelected 
                         ? 'opacity-100 z-10 pointer-events-auto' 
                         : 'opacity-0 z-0 pointer-events-none'

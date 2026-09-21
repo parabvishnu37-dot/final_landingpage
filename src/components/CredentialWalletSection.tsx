@@ -156,13 +156,25 @@ export const CredentialWalletSection: React.FC = () => {
             Keep your verified achievements readily accessible on your mobile device without relying on physical documents.
           </p>
 
-          <a
-            href="#credential-wallet"
-            className="inline-flex items-center gap-2 rounded-xl bg-[#FD4322] hover:bg-[#E03719] text-white font-bold px-7 py-3.5 text-[14px] shadow-[0_8px_20px_rgba(253,67,34,0.22)] transition-all duration-150 hover:-translate-y-0.5 active:scale-[0.99] cursor-pointer"
-          >
-            <span>Explore Credential Wallet</span>
-            <ArrowRight className="w-4 h-4" />
-          </a>
+          <div className="flex flex-col items-center gap-3 w-full sm:w-auto pt-2">
+            <a
+              href="#credential-wallet"
+              className="w-full sm:w-auto min-w-[260px] inline-flex items-center justify-center gap-2 rounded-xl bg-[#FD4322] hover:bg-[#E03719] text-white font-bold px-7 py-3.5 text-[14px] shadow-[0_8px_20px_rgba(253,67,34,0.22)] transition-all duration-150 hover:-translate-y-0.5 active:scale-[0.99] cursor-pointer"
+            >
+              <span>Explore Credential Wallet</span>
+              <ArrowRight className="w-4 h-4" />
+            </a>
+
+            <a
+              href="https://play.google.com/store/apps/details?id=com.sparkrex.credentialwallet"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto min-w-[260px] inline-flex items-center justify-center gap-2 rounded-xl border border-[#DBE6F1] bg-white hover:bg-[#FFF5F0] hover:border-[#FD4322]/40 text-[#14243D] hover:text-[#FD4322] font-bold px-7 py-3.5 text-[14px] shadow-2xs transition-all duration-150 hover:-translate-y-0.5 active:scale-[0.99] cursor-pointer"
+            >
+              <span>Download Now</span>
+              <ArrowRight className="w-4 h-4" />
+            </a>
+          </div>
         </div>
 
       </div>
