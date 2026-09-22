@@ -407,18 +407,8 @@ export const OpportunitiesSection: React.FC = () => {
   return (
     <section 
       id="opportunities"
-      className="relative bg-[#F7F8FA] py-20 sm:py-24 lg:py-28 overflow-hidden border-t border-[#E3EAF1]"
+      className="relative bg-white py-16 sm:py-20 lg:py-24 overflow-hidden border-t border-[#E3EAF1]"
     >
-      {/* Subtle ambient backglows */}
-      <div 
-        className="pointer-events-none absolute -left-20 top-1/3 h-96 w-96 rounded-full bg-[#FD4322]/5 blur-[120px]" 
-        aria-hidden="true" 
-      />
-      <div 
-        className="pointer-events-none absolute -right-20 bottom-1/3 h-96 w-96 rounded-full bg-[#1255FF]/5 blur-[120px]" 
-        aria-hidden="true" 
-      />
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* ======================================================== */}
@@ -426,19 +416,19 @@ export const OpportunitiesSection: React.FC = () => {
         {/* ======================================================== */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-14">
           {/* Eyebrow */}
-          <div className="inline-flex items-center gap-2 rounded-full border border-[#f8d1c6] bg-[#fff1ec] px-4 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.14em] text-[#FD4322] mb-5 shadow-xs">
+          <div className="inline-flex items-center gap-2 rounded-full border border-[#f8d1c6] bg-[#FFF0EB] px-3.5 py-1 text-[11px] font-extrabold uppercase tracking-[0.14em] text-[#FD4322] mb-4 shadow-2xs">
             <span className="h-1.5 w-1.5 rounded-full bg-[#FD4322]" aria-hidden="true" />
             <span>OPPORTUNITIES</span>
           </div>
 
           {/* Main Heading */}
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-black tracking-tight leading-[1.1] text-[#14243D] mb-5">
+          <h2 className="text-2xl sm:text-3xl lg:text-[2.25rem] font-black tracking-tight leading-[1.2] text-[#FD4322] mb-4">
             The next opportunity is <br className="hidden sm:inline" />
             <span className="text-[#FD4322]">closer than you think.</span>
           </h2>
 
           {/* Supporting Text */}
-          <p className="text-base sm:text-lg text-[#5A6B82] font-normal leading-relaxed max-w-2xl mx-auto">
+          <p className="text-base sm:text-[17px] text-[#5A6B82] font-normal leading-relaxed max-w-2xl mx-auto">
             Explore courses, internships, projects, hackathons, jobs and career pathways—all in one place.
           </p>
         </div>

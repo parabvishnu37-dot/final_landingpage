@@ -61,18 +61,8 @@ export const StorytellingSection: React.FC = () => {
   return (
     <section 
       id="how-it-works"
-      className="relative bg-[#F7F8FA] py-20 sm:py-24 lg:py-28 overflow-hidden border-t border-[#E3EAF1]"
+      className="relative bg-[#FFF9F6] py-16 sm:py-20 lg:py-24 overflow-hidden border-t border-[#E3EAF1]"
     >
-      {/* Subtle ambient backglows */}
-      <div 
-        className="pointer-events-none absolute -left-20 top-1/4 h-96 w-96 rounded-full bg-[#FD4322]/5 blur-[120px]" 
-        aria-hidden="true" 
-      />
-      <div 
-        className="pointer-events-none absolute -right-20 bottom-1/4 h-96 w-96 rounded-full bg-[#1255FF]/5 blur-[120px]" 
-        aria-hidden="true" 
-      />
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* ======================================================== */}
@@ -80,13 +70,13 @@ export const StorytellingSection: React.FC = () => {
         {/* ======================================================== */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-14">
           {/* Eyebrow */}
-          <div className="inline-flex items-center gap-2 rounded-full border border-[#f8d1c6] bg-[#fff1ec] px-4 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.14em] text-[#FD4322] mb-5 shadow-xs">
+          <div className="inline-flex items-center gap-2 rounded-full border border-[#f8d1c6] bg-[#FFF0EB] px-3.5 py-1 text-[11px] font-extrabold uppercase tracking-[0.14em] text-[#FD4322] mb-4 shadow-2xs">
             <span className="h-1.5 w-1.5 rounded-full bg-[#FD4322]" aria-hidden="true" />
             <span>FROM LEARNING TO VERIFIED PROOF</span>
           </div>
 
           {/* Main Heading */}
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-black tracking-tight leading-[1.1] text-[#14243D]">
+          <h2 className="text-2xl sm:text-3xl lg:text-[2.25rem] font-black tracking-tight leading-[1.2] text-[#FD4322]">
             Turn what you learn <br className="hidden sm:inline" />
             into something <span className="text-[#FD4322]">you can prove.</span>
           </h2>
@@ -95,7 +85,7 @@ export const StorytellingSection: React.FC = () => {
         {/* ======================================================== */}
         {/* Three Equal Interactive Step Tabs */}
         {/* ======================================================== */}
-        <div className="max-w-[1100px] mx-auto mb-8">
+        <div className="max-w-[960px] mx-auto mb-8">
           <div className="flex md:grid md:grid-cols-3 gap-3.5 sm:gap-4 overflow-x-auto whitespace-nowrap md:whitespace-normal scrollbar-none pb-2 md:pb-0">
             {states.map((state, index) => {
               const isActive = activeStepIndex === index;
@@ -145,13 +135,13 @@ export const StorytellingSection: React.FC = () => {
         </div>
 
         {/* ======================================================== */}
-        {/* ONE Fixed-Size Product Screenshot Container (1100px x 550px) */}
+        {/* ONE Sized Product Screenshot Container (~87% size, no upscaling) */}
         {/* ======================================================== */}
-        <div className="max-w-[1100px] mx-auto mb-6">
+        <div className="max-w-[960px] mx-auto mb-6">
           <div className="relative rounded-[20px] border border-[#DBE6F1] bg-white p-3 sm:p-4 shadow-[0_24px_60px_rgba(20,36,61,0.08)] overflow-hidden">
 
-            {/* Fixed-Size Screenshot Display Area with Smooth 200ms Crossfade */}
-            <div className="relative w-full aspect-[16/10] min-h-[300px] sm:min-h-[420px] md:min-h-[500px] lg:min-h-[580px] rounded-[14px] bg-[#F7F9FC] border border-slate-100 overflow-hidden">
+            {/* Centered Screenshot Display Area with Sharp Containment */}
+            <div className="relative w-full aspect-[16/10] max-h-[500px] rounded-[14px] bg-[#F7F9FC] border border-slate-100 overflow-hidden flex items-center justify-center p-2">
               {states.map((state, idx) => {
                 const isSelected = activeStepIndex === idx;
 
@@ -160,7 +150,7 @@ export const StorytellingSection: React.FC = () => {
                     key={state.id}
                     src={state.screenshot}
                     alt={`SOLO ${state.tabTitle} - ${state.heading}`}
-                    className={`absolute inset-0 w-full h-full object-contain object-top transition-opacity duration-200 ease-in-out ${
+                    className={`absolute inset-0 m-auto max-w-full max-h-full w-auto h-auto object-contain transition-opacity duration-200 ease-in-out ${
                       isSelected 
                         ? 'opacity-100 z-10 pointer-events-auto' 
                         : 'opacity-0 z-0 pointer-events-none'
@@ -176,7 +166,7 @@ export const StorytellingSection: React.FC = () => {
         {/* ======================================================== */}
         {/* Explanatory Content Below the Screenshot (Visually Stable) */}
         {/* ======================================================== */}
-        <div className="max-w-[1100px] mx-auto">
+        <div className="max-w-[960px] mx-auto">
           <div className="rounded-2xl border border-[#E3EAF1] bg-white p-5 sm:p-6 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition-all">
             <div className="max-w-2xl">
               <div className="flex items-center gap-2 mb-1.5">

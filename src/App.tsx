@@ -4,7 +4,7 @@ import { BeforeAfterSoloSection } from './components/BeforeAfterSoloSection';
 import { LearnerProfileSection } from './components/LearnerProfileSection';
 import { StorytellingSection } from './components/StorytellingSection';
 import { OpportunitiesSection } from './components/OpportunitiesSection';
-import { SkillMatchSection } from './components/SkillMatchSection';
+import { TopMatchingJobsSection } from './components/TopMatchingJobsSection';
 import { CareerPathwaysSection } from './components/CareerPathwaysSection';
 import { VerifiedCredentialsSection } from './components/VerifiedCredentialsSection';
 import { ResumeGenerationSection } from './components/ResumeGenerationSection';
@@ -17,7 +17,7 @@ import { AIChatbot } from './components/AIChatbot';
 
 function App() {
   return (
-    <div className="min-h-screen bg-[#F7F8FA] text-[#14243D] relative overflow-hidden flex flex-col">
+    <div className="min-h-screen bg-white text-[#14243D] relative overflow-hidden flex flex-col">
       {/* Sticky/Fixed Minimal Navbar */}
       <Navbar />
 
@@ -28,7 +28,7 @@ function App() {
         <LearnerProfileSection />
         <StorytellingSection />
         <OpportunitiesSection />
-        <SkillMatchSection />
+        <TopMatchingJobsSection />
         <CareerPathwaysSection />
         <VerifiedCredentialsSection />
         <ResumeGenerationSection />

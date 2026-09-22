@@ -44,7 +44,7 @@ export const Navbar = () => {
         <div className="hidden md:flex items-center gap-3">
           <a
             href="#get-started"
-            className="inline-flex items-center justify-center gap-1.5 rounded-xl bg-[#FD4322] hover:bg-[#e83b1c] px-5 py-2 text-[13px] font-extrabold text-white shadow-[0_4px_14px_rgba(253,67,34,0.22)] transition-all hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FD4322] focus-visible:ring-offset-2"
+            className="btn-primary-solo inline-flex h-10 items-center justify-center gap-1.5 rounded-xl px-5 text-[13px] font-bold text-white"
           >
             <span>Get Started</span>
             <ArrowRight className="w-3.5 h-3.5" />
@@ -82,7 +82,7 @@ export const Navbar = () => {
             <a
               href="#get-started"
               onClick={() => setIsOpen(false)}
-              className="flex h-11 items-center justify-center gap-2 rounded-xl bg-[#FD4322] hover:bg-[#e83b1c] text-[13px] font-extrabold text-white shadow-[0_4px_14px_rgba(253,67,34,0.22)] transition-all"
+              className="btn-primary-solo flex h-11 items-center justify-center gap-2 rounded-xl text-[13px] font-bold text-white"
             >
               <span>Get Started</span>
               <ArrowRight className="w-4 h-4" />
