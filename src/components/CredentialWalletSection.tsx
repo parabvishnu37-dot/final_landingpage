@@ -81,7 +81,7 @@ export const CredentialWalletSection: React.FC = () => {
             <div className="w-full overflow-hidden rounded-xl bg-white border border-[#E5E7EB] p-2 sm:p-4 flex items-center justify-center">
               <img 
                 src="/wallet/credential_wallet.png" 
-                alt="SOLO Credential Wallet - Actual Mobile App UI from Learner Guide PDF Page 30"
+                alt="SOLO Credential Wallet - Actual Mobile App UI"
                 className="w-full max-w-[500px] h-auto block rounded-lg shadow-2xs"
                 loading="eager"
               />

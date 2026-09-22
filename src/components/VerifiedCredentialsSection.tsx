@@ -67,7 +67,7 @@ export const VerifiedCredentialsSection: React.FC = () => {
               <div className="min-w-[720px] sm:min-w-0 flex flex-col items-center justify-center">
                 <img 
                   src="/credentials/credential_verified_clean.png" 
-                  alt="SOLO Verified Credential - Actual Product UI from Learner Guide"
+                  alt="SOLO Verified Credential - Actual Product UI"
                   className="w-full h-auto block rounded-lg"
                   loading="eager"
                 />

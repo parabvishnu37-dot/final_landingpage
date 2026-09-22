@@ -148,7 +148,7 @@ export const ResumeGenerationSection: React.FC = () => {
           {activeView === 'both' && (
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 max-w-[1240px] mx-auto">
               
-              {/* Card 1: Resume Generation on Profile (PDF Page 26) */}
+              {/* Card 1: Resume Generation on Profile */}
               <div className="rounded-[20px] border border-[#DBE6F1] bg-white p-4 sm:p-5 shadow-[0_24px_60px_rgba(20,36,61,0.08)] flex flex-col justify-between">
                 <div>
                   {/* Screenshot Container with Responsive Horizontal Scrolling on Mobile */}
@@ -156,7 +156,7 @@ export const ResumeGenerationSection: React.FC = () => {
                     <div className="min-w-[500px] sm:min-w-0">
                       <img 
                         src="/resume/resume_generation.png" 
-                        alt="SOLO Resume Generation Interface - PDF Page 26"
+                        alt="SOLO Resume Generation Interface"
                         className="w-full h-auto block rounded-lg shadow-2xs"
                         loading="eager"
                       />
@@ -166,12 +166,12 @@ export const ResumeGenerationSection: React.FC = () => {
 
                 {/* Sub-caption */}
                 <div className="mt-3 pt-3 border-t border-[#F1F5F9] flex items-center justify-between text-[11.5px] text-[#64748B] px-1">
-                  <span className="italic">PDF Page 26: Generate Resume from learner profile</span>
+                  <span className="italic">Generate resume from learner profile</span>
                   <span className="font-semibold text-[#14243D]">Profile Trigger</span>
                 </div>
               </div>
 
-              {/* Card 2: Resume Template Selection (PDF Page 27) */}
+              {/* Card 2: Resume Template Selection */}
               <div className="rounded-[20px] border border-[#DBE6F1] bg-white p-4 sm:p-5 shadow-[0_24px_60px_rgba(20,36,61,0.08)] flex flex-col justify-between">
                 <div>
                   {/* Screenshot Container with Responsive Horizontal Scrolling on Mobile */}
@@ -179,7 +179,7 @@ export const ResumeGenerationSection: React.FC = () => {
                     <div className="min-w-[500px] sm:min-w-0">
                       <img 
                         src="/resume/resume_templates.png" 
-                        alt="SOLO Resume Template Selection - PDF Page 27"
+                        alt="SOLO Resume Template Selection"
                         className="w-full h-auto block rounded-lg shadow-2xs"
                         loading="eager"
                       />
@@ -189,7 +189,7 @@ export const ResumeGenerationSection: React.FC = () => {
 
                 {/* Sub-caption */}
                 <div className="mt-3 pt-3 border-t border-[#F1F5F9] flex items-center justify-between text-[11.5px] text-[#64748B] px-1">
-                  <span className="italic">PDF Page 27: Professionally designed ATS-ready templates</span>
+                  <span className="italic">Professionally designed ATS-ready templates</span>
                   <span className="font-semibold text-[#14243D]">Template Modal</span>
                 </div>
               </div>
@@ -197,7 +197,7 @@ export const ResumeGenerationSection: React.FC = () => {
             </div>
           )}
 
-          {/* VIEW 2: Full-Width Profile View (PDF Page 26) */}
+          {/* VIEW 2: Full-Width Profile View */}
           {activeView === 'profile' && (
             <div className="max-w-[1140px] mx-auto rounded-[20px] border border-[#DBE6F1] bg-white p-4 sm:p-6 shadow-[0_24px_60px_rgba(20,36,61,0.08)]">
               {/* Full-width Screenshot Container */}
@@ -205,7 +205,7 @@ export const ResumeGenerationSection: React.FC = () => {
                 <div className="min-w-[720px] sm:min-w-0 flex flex-col items-center justify-center">
                   <img 
                     src="/resume/resume_generation.png" 
-                    alt="SOLO Resume Generation Interface - PDF Page 26"
+                    alt="SOLO Resume Generation Interface"
                     className="w-full h-auto block rounded-lg"
                     loading="eager"
                   />
@@ -224,7 +224,7 @@ export const ResumeGenerationSection: React.FC = () => {
             </div>
           )}
 
-          {/* VIEW 3: Full-Width Template Selection (PDF Page 27) */}
+          {/* VIEW 3: Full-Width Template Selection */}
           {activeView === 'templates' && (
             <div className="max-w-[1140px] mx-auto rounded-[20px] border border-[#DBE6F1] bg-white p-4 sm:p-6 shadow-[0_24px_60px_rgba(20,36,61,0.08)]">
               {/* Full-width Screenshot Container */}
@@ -232,7 +232,7 @@ export const ResumeGenerationSection: React.FC = () => {
                 <div className="min-w-[720px] sm:min-w-0 flex flex-col items-center justify-center">
                   <img 
                     src="/resume/resume_templates.png" 
-                    alt="SOLO Resume Template Selection - PDF Page 27"
+                    alt="SOLO Resume Template Selection"
                     className="w-full h-auto block rounded-lg"
                     loading="eager"
                   />
