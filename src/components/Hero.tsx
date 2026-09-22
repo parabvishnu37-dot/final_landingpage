@@ -21,16 +21,16 @@ export const Hero: React.FC = () => {
         <div className="w-full sm:max-w-[420px] lg:max-w-[450px] xl:max-w-[480px] flex flex-col items-start text-left">
           
           {/* Eyebrow Badge */}
-          <div className="mb-5 sm:mb-6 inline-flex items-center gap-2 rounded-full border border-[#f8d1c6] bg-[#fff1ec] px-3.5 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.14em] text-[#FD4322] shadow-xs">
+          <div className="mb-5 sm:mb-6 inline-flex items-center gap-2 rounded-full border border-[#f8d1c6] bg-[#FFF0EB] px-3.5 py-1 text-[11px] font-extrabold uppercase tracking-[0.14em] text-[#FD4322] shadow-2xs">
             <span className="h-1.5 w-1.5 rounded-full bg-[#FD4322]" aria-hidden="true" />
             <span>THE SKILLS-FIRST CAREER PLATFORM</span>
           </div>
 
           {/* Headline */}
-          <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-[3.6rem] xl:text-[4rem] font-black leading-[1.06] tracking-[-0.03em] text-[#14243D] uppercase font-heading mb-5 sm:mb-6">
-            <span className="block text-[#14243D]">YOUR SKILLS.</span>
+          <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-[3.5rem] xl:text-[3.85rem] font-black leading-[1.08] tracking-[-0.03em] uppercase font-heading text-[#FD4322] mb-5 sm:mb-6">
+            <span className="block text-[#FD4322]">YOUR SKILLS.</span>
             <span className="block text-[#FD4322]">YOUR PROOF.</span>
-            <span className="block text-[#14243D]">YOUR NEXT MOVE.</span>
+            <span className="block text-[#FD4322]">YOUR NEXT MOVE.</span>
           </h1>
 
           {/* Supporting Copy */}
@@ -43,7 +43,7 @@ export const Hero: React.FC = () => {
             {/* Primary CTA */}
             <a
               href="#get-started"
-              className="btn-primary-solo inline-flex h-12 items-center justify-center gap-2 rounded-xl px-7 text-[14px] font-extrabold text-white shadow-[0_6px_18px_rgba(253,67,34,0.24)] transition-all hover:-translate-y-0.5 hover:bg-[#e83b1c] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FD4322] focus-visible:ring-offset-2"
+              className="btn-primary-solo inline-flex h-11 items-center justify-center gap-2 rounded-xl px-6 text-[14px] font-bold text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FD4322] focus-visible:ring-offset-2"
             >
               <span>Get Started</span>
               <ArrowRight className="w-4 h-4" />
@@ -52,7 +52,7 @@ export const Hero: React.FC = () => {
             {/* Secondary CTA */}
             <a
               href="#opportunities"
-              className="btn-secondary-solo inline-flex h-12 items-center justify-center gap-2 rounded-xl border border-[#d7e3f0] bg-white px-7 text-[14px] font-bold text-[#14243D] shadow-xs transition-all hover:-translate-y-0.5 hover:border-[#FD4322] hover:text-[#FD4322] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1255FF] focus-visible:ring-offset-2"
+              className="btn-secondary-solo inline-flex h-11 items-center justify-center gap-2 rounded-xl px-6 text-[14px] font-bold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FD4322] focus-visible:ring-offset-2"
             >
               <Compass className="w-4 h-4 text-[#FD4322]" />
               <span>Explore SOLO</span>

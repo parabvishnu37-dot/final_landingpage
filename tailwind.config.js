@@ -14,6 +14,7 @@ export default {
           slate: '#5A6B82',
           muted: '#64748B',
           bg: '#F7F8FA',
+          'warm-bg': '#FFF9F6',
           card: '#FFFFFF',
           border: '#E3EAF1',
           'border-light': '#DBE6F1',
