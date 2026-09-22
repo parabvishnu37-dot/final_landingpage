@@ -108,7 +108,7 @@ export const JobSearchSkillMatchSection: React.FC = () => {
               <div className="max-h-[580px] sm:max-h-[640px] lg:max-h-[700px] overflow-y-auto scrollbar-thin p-1 sm:p-2 bg-[#FAFBFC]">
                 <img 
                   src="/job-search/skill_match_analysis.png" 
-                  alt="SOLO Skill Match Analysis UI from Learner Guide PDF Page 29"
+                  alt="SOLO Skill Match Analysis UI"
                   className="w-full h-auto block rounded-lg shadow-2xs"
                   loading="eager"
                 />
@@ -118,7 +118,7 @@ export const JobSearchSkillMatchSection: React.FC = () => {
               <div className="p-2.5 bg-white/95 backdrop-blur-xs border-t border-[#EEF2F6] flex items-center justify-between text-[11.5px] text-[#64748B]">
                 <span className="flex items-center gap-1.5">
                   <span className="w-2 h-2 rounded-full bg-[#FD4322]" />
-                  <span>PDF Page 29: Actual SOLO Skill Match UI</span>
+                  <span>Actual SOLO Skill Match UI</span>
                 </span>
                 <span className="text-[11px] font-medium text-[#5A6B82]">
                   Scroll to view readiness trend &amp; gap

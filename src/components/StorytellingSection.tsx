@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { ArrowRight, Compass, Hammer, Award } from 'lucide-react';
 
 interface ShowcaseState {
@@ -16,6 +16,51 @@ interface ShowcaseState {
 
 export const StorytellingSection: React.FC = () => {
   const [activeStepIndex, setActiveStepIndex] = useState<number>(0);
+  const sectionRef = useRef<HTMLElement>(null);
+  const userInteractedRef = useRef<boolean>(false);
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) return;
+
+    let rafId: number | null = null;
+
+    const handleScroll = () => {
+      if (userInteractedRef.current) return;
+      if (rafId) return;
+
+      rafId = window.requestAnimationFrame(() => {
+        rafId = null;
+        if (!el) return;
+        const rect = el.getBoundingClientRect();
+        const vh = window.innerHeight;
+
+        // Only progress when section is in active view range
+        if (rect.top <= vh * 0.75 && rect.bottom >= vh * 0.25) {
+          const totalDistance = rect.height + vh * 0.5;
+          const currentDistance = vh * 0.75 - rect.top;
+          const progress = Math.min(Math.max(currentDistance / totalDistance, 0), 1);
+
+          if (progress < 0.35) {
+            setActiveStepIndex(0);
+          } else if (progress < 0.7) {
+            setActiveStepIndex(1);
+          } else {
+            setActiveStepIndex(2);
+          }
+        }
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (rafId) window.cancelAnimationFrame(rafId);
+    };
+  }, []);
 
   const states: ShowcaseState[] = [
     {
@@ -60,6 +105,7 @@ export const StorytellingSection: React.FC = () => {
 
   return (
     <section 
+      ref={sectionRef}
       id="how-it-works"
       className="relative bg-[#FFF9F6] py-16 sm:py-20 lg:py-24 overflow-hidden border-t border-[#E3EAF1]"
     >
@@ -95,7 +141,10 @@ export const StorytellingSection: React.FC = () => {
                 <button
                   key={state.id}
                   type="button"
-                  onClick={() => setActiveStepIndex(index)}
+                  onClick={() => {
+                    userInteractedRef.current = true;
+                    setActiveStepIndex(index);
+                  }}
                   className={`flex-1 min-w-[240px] md:min-w-0 text-left p-4 sm:p-5 rounded-2xl border transition-all duration-200 cursor-pointer ${
                     isActive
                       ? 'bg-white border-[#FD4322] shadow-[0_12px_28px_rgba(253,67,34,0.12)] ring-1 ring-[#FD4322]'

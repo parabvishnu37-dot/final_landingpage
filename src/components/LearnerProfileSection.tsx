@@ -7,8 +7,7 @@ import {
   Bookmark, 
   Globe, 
   Plus, 
-  Award, 
-  Smile
+  Award
 } from 'lucide-react';
 
 interface CourseCardData {
@@ -663,16 +662,7 @@ export const LearnerProfileSection: React.FC = () => {
 
           </div>
 
-          {/* Floating / Sticky Give Feedback Pill matching reference */}
-          <div className="flex justify-end mt-4">
-            <button
-              type="button"
-              className="inline-flex items-center gap-1.5 rounded-full border border-[#E5E7EB] bg-white px-3.5 py-1.5 text-xs font-medium text-[#374151] hover:bg-[#F9FAFB] shadow-xs transition-colors cursor-pointer"
-            >
-              <Smile className="w-3.5 h-3.5 text-[#6B7280]" />
-              <span>Give feedback</span>
-            </button>
-          </div>
+
 
         </div>
 

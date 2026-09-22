@@ -103,3 +103,74 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* Subtle Section & Image Reveal Animations */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-image-on-scroll {
+  opacity: 0;
+  transform: scale(0.985);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-image-on-scroll.is-revealed {
+  opacity: 1;
+  transform: scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-on-scroll,
+  .reveal-image-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* SOLO Companion Subtle Floating Animations */
+@keyframes companionFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes shadowPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.16;
+  }
+  50% {
+    transform: scale(0.90);
+    opacity: 0.08;
+  }
+}
+
+.animate-companion-float {
+  animation: companionFloat 4s ease-in-out infinite;
+}
+
+.animate-shadow-pulse {
+  animation: shadowPulse 4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-companion-float,
+  .animate-shadow-pulse {
+    animation: none !important;
+    transform: none !important;
+  }
+}

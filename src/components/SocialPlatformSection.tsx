@@ -81,7 +81,7 @@ export const SocialPlatformSection: React.FC = () => {
               <div className="min-w-[720px] sm:min-w-0 flex flex-col items-center justify-center">
                 <img 
                   src="/social/social_platform.png" 
-                  alt="SOLO Social Platform - Actual UI from Learner Guide PDF Page 31"
+                  alt="SOLO Social Platform - Actual UI"
                   className="w-full h-auto block rounded-lg shadow-2xs"
                   loading="eager"
                 />
