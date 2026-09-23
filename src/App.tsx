@@ -1,5 +1,6 @@
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
+import { AboutSection } from './components/AboutSection';
 import { BeforeAfterSoloSection } from './components/BeforeAfterSoloSection';
 import { ResumeImportSection } from './components/ResumeImportSection';
 import { LearnerProfileSection } from './components/LearnerProfileSection';
@@ -127,6 +128,10 @@ function App() {
           <JourneyConnector label="NEXT — START YOUR JOURNEY →" targetId="get-started" />
           <div className="reveal-on-scroll">
             <FinalCTASection />
+          </div>
+
+          <div className="reveal-on-scroll">
+             <AboutSection />
           </div>
       </main>
 

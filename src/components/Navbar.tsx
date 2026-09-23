@@ -43,7 +43,7 @@ export const Navbar = () => {
         {/* Right: Get Started CTA */}
         <div className="hidden md:flex items-center gap-3">
           <a
-            href="#get-started"
+            href="https://app.thesolo.network/signin"
             className="btn-primary-solo inline-flex h-10 items-center justify-center gap-1.5 rounded-xl px-5 text-[13px] font-bold text-white"
           >
             <span>Get Started</span>
