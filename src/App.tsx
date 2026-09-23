@@ -2,6 +2,7 @@ import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { BeforeAfterSoloSection } from './components/BeforeAfterSoloSection';
 import { ResumeImportSection } from './components/ResumeImportSection';
+import { GitHubIntegrationSection } from './components/GitHubIntegrationSection';
 import { LearnerProfileSection } from './components/LearnerProfileSection';
 import { StorytellingSection } from './components/StorytellingSection';
 import { OpportunitiesSection } from './components/OpportunitiesSection';
@@ -68,8 +69,13 @@ function App() {
         <div className="reveal-on-scroll">
           <ResumeImportSection />
         </div>
+        
+        <JourneyConnector label="NEXT — CONNECT YOUR GITHUB WORK →" targetId="github-integration" />
+        <div className="reveal-on-scroll">
+          <GitHubIntegrationSection />
+        </div>
           
-          <JourneyConnector stepNumber="02" label="NEXT — BUILD YOUR PROFILE →" targetId="profile" />
+        <JourneyConnector stepNumber="02" label="NEXT — BUILD YOUR PROFILE →" targetId="profile" />
           <div className="reveal-on-scroll">
             <LearnerProfileSection />
           </div>

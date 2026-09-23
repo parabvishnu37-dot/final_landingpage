@@ -49,8 +49,8 @@ const ELEMENT_ITEMS: ElementItem[] = [
     afterTag: 'Issuer Signed',
     iconColor: '#DC2626',
     iconBg: '#FEF2F2',
-    before: { desktopX: 42, desktopY: 6, mobileX: 38, mobileY: 7, rotate: -4 },
-    after: { desktopX: 50, desktopY: 13, mobileX: 50, mobileY: 13, rotate: 0 },
+    before: { desktopX: 42, desktopY: 6, mobileX: 38, mobileY: 6, rotate: -4 },
+    after: { desktopX: 50, desktopY: 11, mobileX: 50, mobileY: 10, rotate: 0 },
   },
   {
     id: 'skills',
@@ -61,8 +61,8 @@ const ELEMENT_ITEMS: ElementItem[] = [
     afterTag: 'Verified Skills',
     iconColor: '#EA580C',
     iconBg: '#FFF7ED',
-    before: { desktopX: 86, desktopY: 11, mobileX: 79, mobileY: 16, rotate: 5 },
-    after: { desktopX: 79, desktopY: 24, mobileX: 74, mobileY: 26, rotate: 0 },
+    before: { desktopX: 86, desktopY: 10, mobileX: 82, mobileY: 15, rotate: 5 },
+    after: { desktopX: 80, desktopY: 22, mobileX: 79, mobileY: 23, rotate: 0 },
   },
   {
     id: 'projects',
@@ -73,8 +73,8 @@ const ELEMENT_ITEMS: ElementItem[] = [
     afterTag: 'Portfolio Proof',
     iconColor: '#16A34A',
     iconBg: '#F0FDF4',
-    before: { desktopX: 90, desktopY: 52, mobileX: 82, mobileY: 52, rotate: -3 },
-    after: { desktopX: 83, desktopY: 50, mobileX: 77, mobileY: 50, rotate: 0 },
+    before: { desktopX: 91, desktopY: 54, mobileX: 86, mobileY: 52, rotate: -3 },
+    after: { desktopX: 85, desktopY: 50, mobileX: 82, mobileY: 50, rotate: 0 },
   },
   {
     id: 'interests',
@@ -85,8 +85,8 @@ const ELEMENT_ITEMS: ElementItem[] = [
     afterTag: 'Role Direction',
     iconColor: '#0D9488',
     iconBg: '#F0FDFA',
-    before: { desktopX: 84, desktopY: 89, mobileX: 78, mobileY: 87, rotate: 4 },
-    after: { desktopX: 79, desktopY: 76, mobileX: 74, mobileY: 74, rotate: 0 },
+    before: { desktopX: 85, desktopY: 90, mobileX: 82, mobileY: 88, rotate: 4 },
+    after: { desktopX: 80, desktopY: 78, mobileX: 79, mobileY: 77, rotate: 0 },
   },
   {
     id: 'achievements',
@@ -97,8 +97,8 @@ const ELEMENT_ITEMS: ElementItem[] = [
     afterTag: 'Recognized',
     iconColor: '#D97706',
     iconBg: '#FFFBEB',
-    before: { desktopX: 44, desktopY: 94, mobileX: 42, mobileY: 93, rotate: -3 },
-    after: { desktopX: 50, desktopY: 87, mobileX: 50, mobileY: 87, rotate: 0 },
+    before: { desktopX: 44, desktopY: 95, mobileX: 42, mobileY: 94, rotate: -3 },
+    after: { desktopX: 50, desktopY: 89, mobileX: 50, mobileY: 90, rotate: 0 },
   },
   {
     id: 'github',
@@ -109,8 +109,8 @@ const ELEMENT_ITEMS: ElementItem[] = [
     afterTag: 'Code Verified',
     iconColor: '#0F172A',
     iconBg: '#F8FAFC',
-    before: { desktopX: 13, desktopY: 88, mobileX: 19, mobileY: 87, rotate: 4 },
-    after: { desktopX: 21, desktopY: 76, mobileX: 26, mobileY: 74, rotate: 0 },
+    before: { desktopX: 13, desktopY: 90, mobileX: 18, mobileY: 88, rotate: 4 },
+    after: { desktopX: 20, desktopY: 78, mobileX: 21, mobileY: 77, rotate: 0 },
   },
   {
     id: 'experience',
@@ -121,8 +121,8 @@ const ELEMENT_ITEMS: ElementItem[] = [
     afterTag: 'Role Evidence',
     iconColor: '#7C3AED',
     iconBg: '#F5F3FF',
-    before: { desktopX: 9, desktopY: 46, mobileX: 17, mobileY: 52, rotate: -5 },
-    after: { desktopX: 17, desktopY: 50, mobileX: 23, mobileY: 50, rotate: 0 },
+    before: { desktopX: 9, desktopY: 46, mobileX: 14, mobileY: 52, rotate: -5 },
+    after: { desktopX: 15, desktopY: 50, mobileX: 18, mobileY: 50, rotate: 0 },
   },
   {
     id: 'education',
@@ -133,8 +133,8 @@ const ELEMENT_ITEMS: ElementItem[] = [
     afterTag: 'Degree Proof',
     iconColor: '#2563EB',
     iconBg: '#EFF6FF',
-    before: { desktopX: 13, desktopY: 10, mobileX: 19, mobileY: 16, rotate: 3 },
-    after: { desktopX: 21, desktopY: 24, mobileX: 26, mobileY: 26, rotate: 0 },
+    before: { desktopX: 13, desktopY: 10, mobileX: 18, mobileY: 15, rotate: 3 },
+    after: { desktopX: 20, desktopY: 22, mobileX: 21, mobileY: 23, rotate: 0 },
   },
 ];
 
@@ -142,6 +142,7 @@ export const BeforeAfterSoloSection: React.FC = () => {
   const [isAfter, setIsAfter] = useState<boolean>(false);
   const [isMobile, setIsMobile] = useState<boolean>(false);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState<boolean>(false);
+  const [animProgress, setAnimProgress] = useState<number>(0); // 0 = Before, 1 = After
 
   // Responsive mobile detection
   useEffect(() => {
@@ -159,6 +160,45 @@ export const BeforeAfterSoloSection: React.FC = () => {
     mql.addEventListener('change', handler);
     return () => mql.removeEventListener('change', handler);
   }, []);
+
+  // Smooth animation interpolation loop linking card positions and connector lines in real-time
+  useEffect(() => {
+    if (prefersReducedMotion) {
+      setAnimProgress(isAfter ? 1 : 0);
+      return;
+    }
+
+    let startTime: number | null = null;
+    let rafId: number;
+    const duration = 750; // ms
+    const startVal = animProgress;
+    const targetVal = isAfter ? 1 : 0;
+
+    if (Math.abs(startVal - targetVal) < 0.001) return;
+
+    const easeOutCubic = (x: number): number => {
+      return 1 - Math.pow(1 - x, 3);
+    };
+
+    const step = (timestamp: number) => {
+      if (!startTime) startTime = timestamp;
+      const elapsed = timestamp - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = easeOutCubic(progress);
+      const currentVal = startVal + (targetVal - startVal) * eased;
+
+      setAnimProgress(currentVal);
+
+      if (progress < 1) {
+        rafId = requestAnimationFrame(step);
+      } else {
+        setAnimProgress(targetVal);
+      }
+    };
+
+    rafId = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(rafId);
+  }, [isAfter, prefersReducedMotion]);
 
   return (
     <section 
@@ -196,7 +236,7 @@ export const BeforeAfterSoloSection: React.FC = () => {
         {/* ======================================================== */}
         <div className="relative w-full max-w-[1080px] mx-auto min-h-[580px] sm:min-h-[620px] lg:min-h-[640px] rounded-[24px] sm:rounded-[32px] border border-[#E3EAF1] bg-white/85 shadow-[0_16px_50px_rgba(20,36,61,0.05)] overflow-hidden p-2 sm:p-4 select-none">
           
-          {/* Subtle Background Pattern */}
+          {/* Subtle Background Grid Pattern */}
           <div 
             className="absolute inset-0 pointer-events-none opacity-40 transition-opacity duration-700"
             style={{
@@ -207,49 +247,51 @@ export const BeforeAfterSoloSection: React.FC = () => {
 
           {/* Subtle Ambient Glow in Connected State */}
           <div 
-            className={`absolute inset-0 pointer-events-none transition-opacity duration-700 ${
-              isAfter ? 'opacity-100' : 'opacity-0'
-            }`}
+            className="absolute inset-0 pointer-events-none transition-opacity duration-700"
             style={{
+              opacity: animProgress,
               background: 'radial-gradient(circle at 50% 50%, rgba(253, 67, 34, 0.08) 0%, transparent 60%)',
             }}
           />
 
-          {/* SVG Connector Lines (Appear smoothly on transition) */}
+          {/* ======================================================== */}
+          {/* SVG Connector Lines (Direct Solid Brand Orange Stroke)   */}
+          {/* Guaranteed to connect across all browsers without drops  */}
+          {/* ======================================================== */}
           <svg className="absolute inset-0 w-full h-full pointer-events-none z-0">
-            <defs>
-              <linearGradient id="soloLineGlow" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#FD4322" stopOpacity="0.4" />
-                <stop offset="100%" stopColor="#FDBA74" stopOpacity="0.2" />
-              </linearGradient>
-            </defs>
-            {ELEMENT_ITEMS.map((item) => {
-              const coords = isAfter ? item.after : item.before;
-              const posX = isMobile ? coords.mobileX : coords.desktopX;
-              const posY = isMobile ? coords.mobileY : coords.desktopY;
+            {animProgress > 0.01 && ELEMENT_ITEMS.map((item) => {
+              const startCoords = item.before;
+              const targetCoords = item.after;
+              const startX = isMobile ? startCoords.mobileX : startCoords.desktopX;
+              const startY = isMobile ? startCoords.mobileY : startCoords.desktopY;
+              const targetX = isMobile ? targetCoords.mobileX : targetCoords.desktopX;
+              const targetY = isMobile ? targetCoords.mobileY : targetCoords.desktopY;
+
+              // Compute synchronized real-time endpoint
+              const currentX = startX + (targetX - startX) * animProgress;
+              const currentY = startY + (targetY - startY) * animProgress;
+              const lineOpacity = Math.min(0.65, animProgress * 0.65);
 
               return (
                 <g key={`line-${item.id}`}>
+                  {/* Robust solid connector line connecting center (50%, 50%) directly to card */}
                   <line
                     x1="50%"
                     y1="50%"
-                    x2={`${posX}%`}
-                    y2={`${posY}%`}
-                    stroke="url(#soloLineGlow)"
-                    strokeWidth={isMobile ? '1.25' : '1.5'}
-                    strokeDasharray="4 3"
-                    className={`transition-all duration-700 ease-out ${
-                      isAfter ? 'opacity-100' : 'opacity-0'
-                    }`}
+                    x2={`${currentX}%`}
+                    y2={`${currentY}%`}
+                    stroke="#FD4322"
+                    strokeOpacity={lineOpacity}
+                    strokeWidth={isMobile ? 1.75 : 2}
+                    strokeDasharray="5 4"
                   />
+                  {/* Subtle connection node dot at the card end */}
                   <circle
-                    cx={`${posX}%`}
-                    cy={`${posY}%`}
-                    r={isMobile ? '2.5' : '3'}
+                    cx={`${currentX}%`}
+                    cy={`${currentY}%`}
+                    r={isMobile ? 3 : 3.5}
                     fill="#FD4322"
-                    className={`transition-all duration-700 ease-out ${
-                      isAfter ? 'opacity-70' : 'opacity-0'
-                    }`}
+                    fillOpacity={lineOpacity * 1.2}
                   />
                 </g>
               );
@@ -297,7 +339,7 @@ export const BeforeAfterSoloSection: React.FC = () => {
                 {/* Central SOLO Profile Hub Card */}
                 <div className="w-full rounded-2xl border-2 border-[#FFE0D6] bg-white p-3.5 sm:p-4 shadow-[0_16px_36px_rgba(253,67,34,0.12)]">
                   <div className="flex items-center justify-center gap-3">
-                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#FD4322] text-white flex items-center justify-center font-black text-xs sm:text-sm shadow-xs shrink-0">
+                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#FD4322] text-white flex items-center justify-center font-black text-xs sm:text-sm shadow-xs shrink-0 ring-4 ring-[#FD4322]/15">
                       AJ
                     </div>
                     <div className="text-left">
@@ -338,17 +380,22 @@ export const BeforeAfterSoloSection: React.FC = () => {
           {/* ======================================================== */}
           {ELEMENT_ITEMS.map((item) => {
             const IconComp = item.icon;
-            const coords = isAfter ? item.after : item.before;
-            const posX = isMobile ? coords.mobileX : coords.desktopX;
-            const posY = isMobile ? coords.mobileY : coords.desktopY;
-            const rotateDeg = isAfter || prefersReducedMotion ? 0 : coords.rotate;
+            const startCoords = item.before;
+            const targetCoords = item.after;
+            const startX = isMobile ? startCoords.mobileX : startCoords.desktopX;
+            const startY = isMobile ? startCoords.mobileY : startCoords.desktopY;
+            const targetX = isMobile ? targetCoords.mobileX : targetCoords.desktopX;
+            const targetY = isMobile ? targetCoords.mobileY : targetCoords.desktopY;
+
+            // Synchronized positioning with connector lines
+            const posX = startX + (targetX - startX) * animProgress;
+            const posY = startY + (targetY - startY) * animProgress;
+            const rotateDeg = startCoords.rotate * (1 - animProgress);
 
             return (
               <div
                 key={item.id}
-                className={`absolute -translate-x-1/2 -translate-y-1/2 z-10 transition-all duration-700 ease-out ${
-                  prefersReducedMotion ? 'transition-none' : ''
-                }`}
+                className="absolute -translate-x-1/2 -translate-y-1/2 z-10 pointer-events-none"
                 style={{
                   left: `${posX}%`,
                   top: `${posY}%`,
@@ -356,8 +403,8 @@ export const BeforeAfterSoloSection: React.FC = () => {
                 }}
               >
                 <div
-                  className={`w-auto min-w-[95px] max-w-[115px] sm:min-w-[130px] sm:max-w-[155px] lg:max-w-[165px] rounded-xl sm:rounded-2xl p-2 sm:p-3 transition-all duration-700 ${
-                    isAfter
+                  className={`w-auto min-w-[95px] max-w-[115px] sm:min-w-[130px] sm:max-w-[155px] lg:max-w-[165px] rounded-xl sm:rounded-2xl p-2 sm:p-3 transition-colors duration-500 ${
+                    animProgress > 0.5
                       ? 'bg-white border-2 border-[#FFE0D6] shadow-[0_6px_20px_rgba(253,67,34,0.08)]'
                       : 'bg-white/95 border border-[#E2E8F0] shadow-2xs'
                   }`}
@@ -384,12 +431,12 @@ export const BeforeAfterSoloSection: React.FC = () => {
                   <div className="flex items-center">
                     <span 
                       className={`text-[8.5px] sm:text-[9.5px] font-semibold px-1.5 py-0.5 rounded transition-colors duration-500 truncate ${
-                        isAfter
+                        animProgress > 0.5
                           ? 'bg-[#DCFCE7] text-[#16A34A] border border-[#BBF7D0]'
                           : 'bg-[#F1F5F9] text-[#94A3B8] border border-[#E2E8F0]'
                       }`}
                     >
-                      {isAfter ? item.afterTag : item.beforeTag}
+                      {animProgress > 0.5 ? item.afterTag : item.beforeTag}
                     </span>
                   </div>
                 </div>
