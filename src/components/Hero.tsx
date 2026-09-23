@@ -42,7 +42,7 @@ export const Hero: React.FC = () => {
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 w-full sm:w-auto">
             {/* Primary CTA */}
             <a
-              href="#get-started"
+              href="https://app.thesolo.network/signin"
               className="btn-primary-solo inline-flex h-11 items-center justify-center gap-2 rounded-xl px-6 text-[14px] font-bold text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FD4322] focus-visible:ring-offset-2"
             >
               <span>Get Started</span>
@@ -55,7 +55,7 @@ export const Hero: React.FC = () => {
               className="btn-secondary-solo inline-flex h-11 items-center justify-center gap-2 rounded-xl px-6 text-[14px] font-bold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FD4322] focus-visible:ring-offset-2"
             >
               <Compass className="w-4 h-4 text-[#FD4322]" />
-              <span>Explore SOLO</span>
+              <span>Explore MORE</span>
             </a>
           </div>
 

@@ -53,7 +53,7 @@ export const FinalCTASection: React.FC = () => {
         {/* Two CTA Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5">
           <a
-            href="#platform"
+            href="https://app.thesolo.network/signin"
             className="btn-primary-solo w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl px-7 h-11 text-[14px] font-bold text-white"
           >
             <span>Get Started</span>
@@ -64,7 +64,7 @@ export const FinalCTASection: React.FC = () => {
             href="#opportunities"
             className="btn-secondary-solo w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl px-7 h-11 text-[14px] font-bold"
           >
-            <span>Explore SOLO</span>
+            <span>Explore MORE</span>
           </a>
         </div>
 
