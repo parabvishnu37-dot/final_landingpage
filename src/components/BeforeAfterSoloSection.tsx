@@ -1,49 +1,167 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   Code2, 
   FolderGit2, 
-  Award, 
-  FileText, 
+  GraduationCap, 
   Briefcase, 
+  Award, 
+  Trophy, 
+  Compass, 
+  GitBranch, 
   ArrowRight, 
+  RotateCcw, 
   CheckCircle2, 
-  Sparkles,
-  ArrowDown
+  Sparkles 
 } from 'lucide-react';
 
+interface ElementItem {
+  id: string;
+  icon: React.ComponentType<{ className?: string }>;
+  label: string;
+  title: string;
+  beforeTag: string;
+  afterTag: string;
+  iconColor: string;
+  iconBg: string;
+  before: {
+    desktopX: number;
+    desktopY: number;
+    mobileX: number;
+    mobileY: number;
+    rotate: number;
+  };
+  after: {
+    desktopX: number;
+    desktopY: number;
+    mobileX: number;
+    mobileY: number;
+    rotate: number;
+  };
+}
+
+const ELEMENT_ITEMS: ElementItem[] = [
+  {
+    id: 'certificates',
+    icon: Award,
+    label: 'Certificates',
+    title: 'AWS Certified',
+    beforeTag: 'Local file',
+    afterTag: 'Issuer Signed',
+    iconColor: '#DC2626',
+    iconBg: '#FEF2F2',
+    before: { desktopX: 42, desktopY: 6, mobileX: 38, mobileY: 7, rotate: -4 },
+    after: { desktopX: 50, desktopY: 13, mobileX: 50, mobileY: 13, rotate: 0 },
+  },
+  {
+    id: 'skills',
+    icon: Code2,
+    label: 'Skills',
+    title: 'React, Python, SQL',
+    beforeTag: 'Static doc',
+    afterTag: 'Verified Skills',
+    iconColor: '#EA580C',
+    iconBg: '#FFF7ED',
+    before: { desktopX: 86, desktopY: 11, mobileX: 79, mobileY: 16, rotate: 5 },
+    after: { desktopX: 79, desktopY: 24, mobileX: 74, mobileY: 26, rotate: 0 },
+  },
+  {
+    id: 'projects',
+    icon: FolderGit2,
+    label: 'Projects',
+    title: 'Career Assistant',
+    beforeTag: 'Unlinked repo',
+    afterTag: 'Portfolio Proof',
+    iconColor: '#16A34A',
+    iconBg: '#F0FDF4',
+    before: { desktopX: 90, desktopY: 52, mobileX: 82, mobileY: 52, rotate: -3 },
+    after: { desktopX: 83, desktopY: 50, mobileX: 77, mobileY: 50, rotate: 0 },
+  },
+  {
+    id: 'interests',
+    icon: Compass,
+    label: 'Interests',
+    title: 'AI & UI/UX',
+    beforeTag: 'Unmatched',
+    afterTag: 'Role Direction',
+    iconColor: '#0D9488',
+    iconBg: '#F0FDFA',
+    before: { desktopX: 84, desktopY: 89, mobileX: 78, mobileY: 87, rotate: 4 },
+    after: { desktopX: 79, desktopY: 76, mobileX: 74, mobileY: 74, rotate: 0 },
+  },
+  {
+    id: 'achievements',
+    icon: Trophy,
+    label: 'Achievements',
+    title: '1st Hackathon',
+    beforeTag: 'Unshared win',
+    afterTag: 'Recognized',
+    iconColor: '#D97706',
+    iconBg: '#FFFBEB',
+    before: { desktopX: 44, desktopY: 94, mobileX: 42, mobileY: 93, rotate: -3 },
+    after: { desktopX: 50, desktopY: 87, mobileX: 50, mobileY: 87, rotate: 0 },
+  },
+  {
+    id: 'github',
+    icon: GitBranch,
+    label: 'GitHub',
+    title: '124 Contribs',
+    beforeTag: 'External link',
+    afterTag: 'Code Verified',
+    iconColor: '#0F172A',
+    iconBg: '#F8FAFC',
+    before: { desktopX: 13, desktopY: 88, mobileX: 19, mobileY: 87, rotate: 4 },
+    after: { desktopX: 21, desktopY: 76, mobileX: 26, mobileY: 74, rotate: 0 },
+  },
+  {
+    id: 'experience',
+    icon: Briefcase,
+    label: 'Experience',
+    title: 'Web Dev Intern',
+    beforeTag: 'Resume bullet',
+    afterTag: 'Role Evidence',
+    iconColor: '#7C3AED',
+    iconBg: '#F5F3FF',
+    before: { desktopX: 9, desktopY: 46, mobileX: 17, mobileY: 52, rotate: -5 },
+    after: { desktopX: 17, desktopY: 50, mobileX: 23, mobileY: 50, rotate: 0 },
+  },
+  {
+    id: 'education',
+    icon: GraduationCap,
+    label: 'Education',
+    title: 'B.S. Comp Sci',
+    beforeTag: 'PDF transcript',
+    afterTag: 'Degree Proof',
+    iconColor: '#2563EB',
+    iconBg: '#EFF6FF',
+    before: { desktopX: 13, desktopY: 10, mobileX: 19, mobileY: 16, rotate: 3 },
+    after: { desktopX: 21, desktopY: 24, mobileX: 26, mobileY: 26, rotate: 0 },
+  },
+];
+
 export const BeforeAfterSoloSection: React.FC = () => {
-  const [isRevealed, setIsRevealed] = useState(false);
-  const sectionRef = useRef<HTMLElement | null>(null);
+  const [isAfter, setIsAfter] = useState<boolean>(false);
+  const [isMobile, setIsMobile] = useState<boolean>(false);
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState<boolean>(false);
 
+  // Responsive mobile detection
   useEffect(() => {
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReduced) {
-      setIsRevealed(true);
-      return;
-    }
+    const handleResize = () => setIsMobile(window.innerWidth < 640);
+    handleResize();
+    window.addEventListener('resize', handleResize, { passive: true });
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsRevealed(true);
-            observer.disconnect();
-          }
-        });
-      },
-      { threshold: 0.12 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
+  // Motion preference detection
+  useEffect(() => {
+    const mql = window.matchMedia('(prefers-reduced-motion: reduce)');
+    setPrefersReducedMotion(mql.matches);
+    const handler = (e: MediaQueryListEvent) => setPrefersReducedMotion(e.matches);
+    mql.addEventListener('change', handler);
+    return () => mql.removeEventListener('change', handler);
   }, []);
 
   return (
     <section 
-      ref={sectionRef}
       id="before-after" 
       className="relative bg-[#FFF9F6] py-16 sm:py-20 lg:py-24 overflow-hidden border-t border-[#E3EAF1]"
     >
@@ -52,7 +170,7 @@ export const BeforeAfterSoloSection: React.FC = () => {
         {/* ======================================================== */}
         {/* Section Header                                           */}
         {/* ======================================================== */}
-        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
           {/* Eyebrow */}
           <div className="inline-flex items-center gap-2 rounded-full border border-[#f8d1c6] bg-[#FFF0EB] px-3.5 py-1 text-[11px] font-extrabold uppercase tracking-[0.14em] text-[#FD4322] mb-4 shadow-2xs">
             <span className="h-1.5 w-1.5 rounded-full bg-[#FD4322]" aria-hidden="true" />
@@ -67,322 +185,217 @@ export const BeforeAfterSoloSection: React.FC = () => {
 
           {/* Supporting Text */}
           <p className="text-base sm:text-[17px] text-[#5A6B82] font-normal leading-relaxed max-w-2xl mx-auto">
-            Courses, projects, certificates, skills and opportunities can exist in different places. SOLO brings them together into one connected career profile.
+            {isAfter 
+              ? 'With SOLO, your skills, proof, and career direction are organized into one verified, connected ecosystem.'
+              : 'Skills, projects, and achievements are scattered across documents, repos, and folders. Experience the transformation below.'}
           </p>
         </div>
 
         {/* ======================================================== */}
-        {/* Three-Column Transformation Layout                       */}
-        {/* BEFORE SOLO (5 cols) → TRANSITION (2 cols) → WITH SOLO (5 cols) */}
+        {/* Interactive Before → After Transformation Arena          */}
         {/* ======================================================== */}
-        <div className="max-w-[1180px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-4 items-stretch">
+        <div className="relative w-full max-w-[1080px] mx-auto min-h-[580px] sm:min-h-[620px] lg:min-h-[640px] rounded-[24px] sm:rounded-[32px] border border-[#E3EAF1] bg-white/85 shadow-[0_16px_50px_rgba(20,36,61,0.05)] overflow-hidden p-2 sm:p-4 select-none">
           
-          {/* ======================================================== */}
-          {/* LEFT: BEFORE SOLO (Scattered & Unconnected)              */}
-          {/* ======================================================== */}
+          {/* Subtle Background Pattern */}
           <div 
-            className={`lg:col-span-5 rounded-[22px] border border-[#DBE6F1] bg-white p-6 sm:p-7 shadow-[0_16px_40px_rgba(20,36,61,0.05)] flex flex-col justify-between relative overflow-hidden transition-all duration-700 ease-out ${
-              isRevealed ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+            className="absolute inset-0 pointer-events-none opacity-40 transition-opacity duration-700"
+            style={{
+              backgroundImage: 'radial-gradient(#E2E8F0 1px, transparent 1px)',
+              backgroundSize: '24px 24px',
+            }}
+          />
+
+          {/* Subtle Ambient Glow in Connected State */}
+          <div 
+            className={`absolute inset-0 pointer-events-none transition-opacity duration-700 ${
+              isAfter ? 'opacity-100' : 'opacity-0'
             }`}
-          >
-            {/* Top Label & Caption */}
-            <div className="mb-5">
-              <div className="flex items-center justify-between gap-2 mb-2">
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-[#F1F5F9] border border-[#E2E8F0] px-3 py-1 text-[11px] font-extrabold uppercase tracking-wider text-[#64748B]">
+            style={{
+              background: 'radial-gradient(circle at 50% 50%, rgba(253, 67, 34, 0.08) 0%, transparent 60%)',
+            }}
+          />
+
+          {/* SVG Connector Lines (Appear smoothly on transition) */}
+          <svg className="absolute inset-0 w-full h-full pointer-events-none z-0">
+            <defs>
+              <linearGradient id="soloLineGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#FD4322" stopOpacity="0.4" />
+                <stop offset="100%" stopColor="#FDBA74" stopOpacity="0.2" />
+              </linearGradient>
+            </defs>
+            {ELEMENT_ITEMS.map((item) => {
+              const coords = isAfter ? item.after : item.before;
+              const posX = isMobile ? coords.mobileX : coords.desktopX;
+              const posY = isMobile ? coords.mobileY : coords.desktopY;
+
+              return (
+                <g key={`line-${item.id}`}>
+                  <line
+                    x1="50%"
+                    y1="50%"
+                    x2={`${posX}%`}
+                    y2={`${posY}%`}
+                    stroke="url(#soloLineGlow)"
+                    strokeWidth={isMobile ? '1.25' : '1.5'}
+                    strokeDasharray="4 3"
+                    className={`transition-all duration-700 ease-out ${
+                      isAfter ? 'opacity-100' : 'opacity-0'
+                    }`}
+                  />
+                  <circle
+                    cx={`${posX}%`}
+                    cy={`${posY}%`}
+                    r={isMobile ? '2.5' : '3'}
+                    fill="#FD4322"
+                    className={`transition-all duration-700 ease-out ${
+                      isAfter ? 'opacity-70' : 'opacity-0'
+                    }`}
+                  />
+                </g>
+              );
+            })}
+          </svg>
+
+          {/* ======================================================== */}
+          {/* Central SOLO Hub / Interactive Button                    */}
+          {/* ======================================================== */}
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 flex flex-col items-center justify-center text-center">
+            
+            {!isAfter ? (
+              /* BEFORE STATE: Prominent "USE SOLO →" Button */
+              <div className="flex flex-col items-center justify-center animate-fadeIn">
+                {/* State Indicator */}
+                <div className="mb-3 inline-flex items-center gap-1.5 rounded-full border border-[#E2E8F0] bg-white px-3 py-1 text-[11px] font-extrabold uppercase tracking-wider text-[#64748B] shadow-2xs">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#94A3B8]" />
-                  BEFORE SOLO
-                </span>
-                <span className="text-[11px] font-medium text-[#94A3B8]">
-                  Scattered storage
-                </span>
-              </div>
-              <p className="text-[13.5px] text-[#64748B] italic font-medium leading-snug">
-                “Your skills, experiences and achievements are scattered.”
-              </p>
-            </div>
-
-            {/* Visual Fragments (Separate & Unconnected) */}
-            <div className="relative py-2 px-1 min-h-[350px] flex flex-col justify-center gap-3">
-              
-              {/* Fragment 1: Resume (Slightly tilted left) */}
-              <div 
-                className={`rounded-xl border border-[#E2E8F0] bg-[#FAFAFA] p-3 shadow-2xs transition-all duration-700 ease-out ${
-                  isRevealed ? 'opacity-100 -rotate-1.5 translate-x-[-2px]' : 'opacity-0 translate-y-2'
-                }`}
-              >
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2.5">
-                    <div className="w-7 h-7 rounded-md bg-[#F5F3FF] text-[#7C3AED] flex items-center justify-center shrink-0">
-                      <FileText className="w-3.5 h-3.5" />
-                    </div>
-                    <div>
-                      <span className="text-[10px] font-bold text-[#64748B] uppercase tracking-wider block">Resume</span>
-                      <p className="text-[12.5px] font-bold text-[#1F2937] leading-tight">Resume_v3_final.pdf</p>
-                    </div>
-                  </div>
-                  <span className="text-[10px] text-[#94A3B8] font-medium bg-[#F1F5F9] px-2 py-0.5 rounded">
-                    Static file
-                  </span>
+                  <span>BEFORE SOLO · SCATTERED</span>
                 </div>
-              </div>
 
-              {/* Fragment 2 & 3: Skills & Projects (Side by Side, Tilted) */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {/* Fragment 2: Skills */}
-                <div 
-                  className={`rounded-xl border border-[#E2E8F0] bg-[#FAFAFA] p-3 shadow-2xs transition-all duration-700 delay-100 ease-out ${
-                    isRevealed ? 'opacity-100 rotate-1 translate-x-[2px]' : 'opacity-0 translate-y-2'
-                  }`}
+                {/* Prominent Action Button */}
+                <button
+                  onClick={() => setIsAfter(true)}
+                  className="group relative inline-flex items-center gap-2.5 rounded-full bg-[#FD4322] hover:bg-[#e83b1c] text-white px-7 sm:px-8 py-3.5 sm:py-4 text-sm sm:text-base font-extrabold shadow-[0_10px_28px_rgba(253,67,34,0.35)] hover:shadow-[0_14px_36px_rgba(253,67,34,0.45)] hover:scale-[1.03] active:scale-[0.98] transition-all cursor-pointer focus:outline-hidden"
+                  aria-label="Connect information using SOLO"
                 >
-                  <div className="flex items-center gap-2 mb-1">
-                    <div className="w-6 h-6 rounded-md bg-[#FFF7ED] text-[#EA580C] flex items-center justify-center shrink-0">
-                      <Code2 className="w-3 h-3" />
-                    </div>
-                    <span className="text-[10px] font-bold text-[#64748B] uppercase tracking-wider">Skills</span>
-                  </div>
-                  <p className="text-[12px] font-bold text-[#1F2937] truncate">React, Python, SQL</p>
-                  <p className="text-[10px] text-[#94A3B8] mt-0.5">Listed on a doc</p>
+                  <span>USE SOLO</span>
+                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
+                </button>
+
+                {/* Helpful Hint */}
+                <p className="mt-3 text-[11.5px] sm:text-xs text-[#5A6B82] font-medium">
+                  Click to connect your scattered pieces
+                </p>
+              </div>
+            ) : (
+              /* AFTER STATE: Connected Profile Hub & State Label */
+              <div className="flex flex-col items-center justify-center animate-fadeIn max-w-[280px] sm:max-w-[340px]">
+                {/* State Label: "AFTER SOLO" */}
+                <div className="mb-2.5 inline-flex items-center gap-1.5 rounded-full border border-[#f8d1c6] bg-[#FFF0EB] px-3.5 py-1 text-[11px] font-extrabold uppercase tracking-wider text-[#FD4322] shadow-2xs">
+                  <Sparkles className="w-3.5 h-3.5 text-[#FD4322]" />
+                  <span>AFTER SOLO</span>
                 </div>
 
-                {/* Fragment 3: Projects */}
-                <div 
-                  className={`rounded-xl border border-[#E2E8F0] bg-[#FAFAFA] p-3 shadow-2xs transition-all duration-700 delay-150 ease-out ${
-                    isRevealed ? 'opacity-100 -rotate-1 translate-x-[-1px]' : 'opacity-0 translate-y-2'
-                  }`}
-                >
-                  <div className="flex items-center gap-2 mb-1">
-                    <div className="w-6 h-6 rounded-md bg-[#F0FDF4] text-[#16A34A] flex items-center justify-center shrink-0">
-                      <FolderGit2 className="w-3 h-3" />
+                {/* Central SOLO Profile Hub Card */}
+                <div className="w-full rounded-2xl border-2 border-[#FFE0D6] bg-white p-3.5 sm:p-4 shadow-[0_16px_36px_rgba(253,67,34,0.12)]">
+                  <div className="flex items-center justify-center gap-3">
+                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#FD4322] text-white flex items-center justify-center font-black text-xs sm:text-sm shadow-xs shrink-0">
+                      AJ
                     </div>
-                    <span className="text-[10px] font-bold text-[#64748B] uppercase tracking-wider">Projects</span>
-                  </div>
-                  <p className="text-[12px] font-bold text-[#1F2937] truncate">AI Career Assistant</p>
-                  <p className="text-[10px] text-[#94A3B8] mt-0.5">Unverified repo link</p>
-                </div>
-              </div>
-
-              {/* Fragment 4 & 5: Certificates & Experiences (Side by Side, Tilted) */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {/* Fragment 4: Certificates */}
-                <div 
-                  className={`rounded-xl border border-[#E2E8F0] bg-[#FAFAFA] p-3 shadow-2xs transition-all duration-700 delay-200 ease-out ${
-                    isRevealed ? 'opacity-100 rotate-1.5 translate-x-[3px]' : 'opacity-0 translate-y-2'
-                  }`}
-                >
-                  <div className="flex items-center gap-2 mb-1">
-                    <div className="w-6 h-6 rounded-md bg-[#FEF2F2] text-[#DC2626] flex items-center justify-center shrink-0">
-                      <Award className="w-3 h-3" />
+                    <div className="text-left">
+                      <div className="flex items-center gap-1.5">
+                        <span className="text-xs sm:text-[14px] font-black text-[#14243D]">Alex Johnson</span>
+                        <CheckCircle2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#16A34A]" />
+                      </div>
+                      <span className="text-[10px] sm:text-[11px] font-semibold text-[#FD4322] block">
+                        Connected SOLO Profile
+                      </span>
                     </div>
-                    <span className="text-[10px] font-bold text-[#64748B] uppercase tracking-wider">Certificates</span>
                   </div>
-                  <p className="text-[12px] font-bold text-[#1F2937] truncate">Certificate.pdf</p>
-                  <p className="text-[10px] text-[#94A3B8] mt-0.5">Saved on hard drive</p>
-                </div>
-
-                {/* Fragment 5: Experiences */}
-                <div 
-                  className={`rounded-xl border border-[#E2E8F0] bg-[#FAFAFA] p-3 shadow-2xs transition-all duration-700 delay-250 ease-out ${
-                    isRevealed ? 'opacity-100 -rotate-1.5 translate-x-[-2px]' : 'opacity-0 translate-y-2'
-                  }`}
-                >
-                  <div className="flex items-center gap-2 mb-1">
-                    <div className="w-6 h-6 rounded-md bg-[#EFF6FF] text-[#3B82F6] flex items-center justify-center shrink-0">
-                      <Briefcase className="w-3 h-3" />
-                    </div>
-                    <span className="text-[10px] font-bold text-[#64748B] uppercase tracking-wider">Experiences</span>
-                  </div>
-                  <p className="text-[12px] font-bold text-[#1F2937] truncate">Web Intern / Freelance</p>
-                  <p className="text-[10px] text-[#94A3B8] mt-0.5">Scattered across docs</p>
-                </div>
-              </div>
-
-            </div>
-
-            {/* Bottom Status Note */}
-            <div className="pt-4 border-t border-[#F1F5F9] text-center">
-              <span className="text-[12px] text-[#94A3B8] font-medium">
-                No single source of truth for your professional journey
-              </span>
-            </div>
-          </div>
-
-          {/* ======================================================== */}
-          {/* CENTER: TRANSITION CUE (SCATTERED → CONNECTED)           */}
-          {/* ======================================================== */}
-          <div 
-            className={`lg:col-span-2 flex flex-col items-center justify-center py-4 lg:py-0 transition-all duration-800 delay-300 ease-out ${
-              isRevealed ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
-            }`}
-          >
-            {/* Desktop Vertical Stems */}
-            <div className="hidden lg:flex flex-col items-center mb-2">
-              <div className="w-[1.5px] h-10 bg-gradient-to-b from-transparent via-[#FFE0D6] to-[#FD4322]/50" />
-            </div>
-
-            {/* Central Badge */}
-            <div className="flex flex-col items-center text-center gap-2 px-2">
-              <div className="inline-flex items-center gap-1.5 rounded-full border border-[#f8d1c6] bg-[#FFF0EB] px-3.5 py-1.5 text-[10.5px] sm:text-[11px] font-black uppercase tracking-[0.14em] text-[#FD4322] shadow-xs">
-                <span>SCATTERED</span>
-                <ArrowRight className="w-3.5 h-3.5 text-[#FD4322] shrink-0" />
-                <span>CONNECTED</span>
-              </div>
-              
-              <span className="text-[11px] font-semibold text-[#5A6B82] leading-tight max-w-[140px]">
-                SOLO connects the pieces
-              </span>
-            </div>
-
-            {/* Desktop Vertical Stems */}
-            <div className="hidden lg:flex flex-col items-center mt-2">
-              <div className="w-[1.5px] h-10 bg-gradient-to-t from-transparent via-[#FFE0D6] to-[#FD4322]/50" />
-            </div>
-          </div>
-
-          {/* ======================================================== */}
-          {/* RIGHT: WITH SOLO (Connected & Verified Ecosystem)        */}
-          {/* ======================================================== */}
-          <div 
-            className={`lg:col-span-5 rounded-[22px] border-2 border-[#FFE0D6] bg-white p-6 sm:p-7 shadow-[0_20px_50px_rgba(253,67,34,0.08)] flex flex-col justify-between relative overflow-hidden transition-all duration-700 delay-200 ease-out ${
-              isRevealed ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-            }`}
-          >
-            {/* Top Label & Caption */}
-            <div className="mb-4">
-              <div className="flex items-center justify-between gap-2 mb-2">
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-[#FFF0EB] border border-[#f8d1c6] px-3 py-1 text-[11px] font-extrabold uppercase tracking-wider text-[#FD4322] shadow-2xs">
-                  <Sparkles className="w-3 h-3 text-[#FD4322]" />
-                  WITH SOLO
-                </span>
-                <span className="text-[11px] font-semibold text-[#16A34A] flex items-center gap-1">
-                  <CheckCircle2 className="w-3.5 h-3.5" />
-                  Connected ecosystem
-                </span>
-              </div>
-              <p className="text-[13.5px] text-[#14243D] font-medium leading-snug">
-                “One profile connects your skills, proof and opportunities.”
-              </p>
-            </div>
-
-            {/* Connected SOLO Ecosystem Structure */}
-            <div className="py-2 flex flex-col items-center">
-              
-              {/* 1. TOP NODE: SOLO PROFILE */}
-              <div className="w-full max-w-[320px] rounded-xl border border-[#FFE0D6] bg-[#FFF8F5] p-3 shadow-xs text-center relative z-10 hover:border-[#FD4322]/40 transition-colors">
-                <div className="flex items-center justify-center gap-2.5">
-                  <div className="w-8 h-8 rounded-full bg-[#FD4322] text-white flex items-center justify-center font-bold text-xs shadow-xs shrink-0">
-                    AJ
-                  </div>
-                  <div className="text-left">
-                    <div className="flex items-center gap-1.5">
-                      <span className="text-[13px] font-bold text-[#14243D]">Alex Johnson</span>
-                      <CheckCircle2 className="w-3.5 h-3.5 text-[#16A34A]" />
-                    </div>
-                    <span className="text-[10.5px] text-[#64748B] block">IT / Software Learner · Verified SOLO Profile</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Vertical Connector Line from Profile */}
-              <div className="w-[1.5px] h-4 bg-[#FFE0D6]" />
-
-              {/* Horizontal Branch Connector to 3 Sub-Nodes */}
-              <div className="w-full max-w-[380px] relative">
-                {/* Horizontal line spanning 3 columns */}
-                <div className="absolute top-0 left-[16.6%] right-[16.6%] h-[1.5px] bg-[#FFE0D6]" />
-                
-                {/* 3 Child Cards: SKILLS, PROJECTS, CREDENTIALS */}
-                <div className="grid grid-cols-3 gap-2 pt-2.5">
                   
-                  {/* SKILLS */}
-                  <div className="relative flex flex-col items-center">
-                    <div className="absolute -top-2.5 w-[1.5px] h-2.5 bg-[#FFE0D6]" />
-                    <div className="w-full rounded-lg border border-[#E5E7EB] bg-white p-2 text-center shadow-2xs hover:border-[#FD4322]/40 transition-colors">
-                      <span className="text-[9.5px] font-extrabold text-[#FD4322] uppercase tracking-wider block mb-0.5">
-                        SKILLS
-                      </span>
-                      <p className="text-[10.5px] font-bold text-[#14243D] leading-tight">
-                        React, Python
-                      </p>
-                      <span className="inline-block mt-1 text-[9px] font-semibold text-[#16A34A] bg-[#DCFCE7] px-1.5 py-0.2 rounded">
-                        Verified
-                      </span>
-                    </div>
+                  {/* Supporting Message */}
+                  <div className="mt-2 pt-2 border-t border-[#F1F5F9]">
+                    <p className="text-[11.5px] sm:text-[12.5px] font-bold text-[#14243D] leading-tight">
+                      “Everything connected. Everything working together.”
+                    </p>
                   </div>
-
-                  {/* PROJECTS */}
-                  <div className="relative flex flex-col items-center">
-                    <div className="absolute -top-2.5 w-[1.5px] h-2.5 bg-[#FFE0D6]" />
-                    <div className="w-full rounded-lg border border-[#E5E7EB] bg-white p-2 text-center shadow-2xs hover:border-[#FD4322]/40 transition-colors">
-                      <span className="text-[9.5px] font-extrabold text-[#1255FF] uppercase tracking-wider block mb-0.5">
-                        PROJECTS
-                      </span>
-                      <p className="text-[10.5px] font-bold text-[#14243D] leading-tight">
-                        Career Assistant
-                      </p>
-                      <span className="inline-block mt-1 text-[9px] font-semibold text-[#2563EB] bg-[#EFF6FF] px-1.5 py-0.2 rounded">
-                        Evidence
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* CREDENTIALS */}
-                  <div className="relative flex flex-col items-center">
-                    <div className="absolute -top-2.5 w-[1.5px] h-2.5 bg-[#FFE0D6]" />
-                    <div className="w-full rounded-lg border border-[#E5E7EB] bg-white p-2 text-center shadow-2xs hover:border-[#FD4322]/40 transition-colors">
-                      <span className="text-[9.5px] font-extrabold text-[#16A34A] uppercase tracking-wider block mb-0.5">
-                        CREDENTIALS
-                      </span>
-                      <p className="text-[10.5px] font-bold text-[#14243D] leading-tight">
-                        OpenBadges
-                      </p>
-                      <span className="inline-block mt-1 text-[9px] font-semibold text-[#0D9488] bg-[#CCFBF1] px-1.5 py-0.2 rounded">
-                        Signed
-                      </span>
-                    </div>
-                  </div>
-
                 </div>
+
+                {/* Reset / Replay Button */}
+                <button
+                  onClick={() => setIsAfter(false)}
+                  className="mt-2.5 inline-flex items-center gap-1.5 text-[11px] sm:text-xs font-bold text-[#5A6B82] hover:text-[#FD4322] transition-colors cursor-pointer bg-white px-3 py-1 rounded-full border border-[#E2E8F0] shadow-2xs focus:outline-hidden"
+                  title="View scattered before state"
+                >
+                  <RotateCcw className="w-3 h-3" />
+                  <span>View Scattered</span>
+                </button>
               </div>
-
-              {/* Vertical Connector Down to OPPORTUNITIES */}
-              <div className="flex flex-col items-center my-1">
-                <div className="w-[1.5px] h-3.5 bg-[#FFE0D6]" />
-                <ArrowDown className="w-3.5 h-3.5 text-[#FD4322] -mt-1" />
-              </div>
-
-              {/* 3. BOTTOM NODE: OPPORTUNITIES */}
-              <div className="w-full max-w-[340px] rounded-xl border border-[#C7D2FE] bg-[#F8FAFF] p-2.5 shadow-xs text-center hover:border-[#FD4322]/30 transition-colors">
-                <div className="flex items-center justify-between gap-2">
-                  <div className="flex items-center gap-2 text-left">
-                    <div className="w-6 h-6 rounded-lg bg-[#EEF2FF] text-[#4F46E5] flex items-center justify-center shrink-0">
-                      <Briefcase className="w-3 h-3" />
-                    </div>
-                    <div>
-                      <span className="text-[9.5px] font-extrabold text-[#4F46E5] uppercase tracking-wider block">
-                        OPPORTUNITIES
-                      </span>
-                      <p className="text-[11.5px] font-bold text-[#14243D]">
-                        Junior Full-Stack Developer
-                      </p>
-                    </div>
-                  </div>
-                  <span className="text-[9.5px] font-bold text-[#16A34A] bg-[#DCFCE7] px-2 py-0.5 rounded-md shrink-0">
-                    92% Match
-                  </span>
-                </div>
-              </div>
-
-            </div>
-
-            {/* Bottom Proof Note */}
-            <div className="pt-4 border-t border-[#F3F4F6] text-center">
-              <span className="text-[12px] text-[#5A6B82] font-semibold flex items-center justify-center gap-1.5">
-                <span>Everything verified and connected in your lifelong SOLO profile</span>
-                <ArrowRight className="w-3.5 h-3.5 text-[#FD4322]" />
-              </span>
-            </div>
+            )}
 
           </div>
+
+          {/* ======================================================== */}
+          {/* 8 Information Fragment Cards (Scattered → Connected)     */}
+          {/* ======================================================== */}
+          {ELEMENT_ITEMS.map((item) => {
+            const IconComp = item.icon;
+            const coords = isAfter ? item.after : item.before;
+            const posX = isMobile ? coords.mobileX : coords.desktopX;
+            const posY = isMobile ? coords.mobileY : coords.desktopY;
+            const rotateDeg = isAfter || prefersReducedMotion ? 0 : coords.rotate;
+
+            return (
+              <div
+                key={item.id}
+                className={`absolute -translate-x-1/2 -translate-y-1/2 z-10 transition-all duration-700 ease-out ${
+                  prefersReducedMotion ? 'transition-none' : ''
+                }`}
+                style={{
+                  left: `${posX}%`,
+                  top: `${posY}%`,
+                  transform: `translate(-50%, -50%) rotate(${rotateDeg}deg)`,
+                }}
+              >
+                <div
+                  className={`w-auto min-w-[95px] max-w-[115px] sm:min-w-[130px] sm:max-w-[155px] lg:max-w-[165px] rounded-xl sm:rounded-2xl p-2 sm:p-3 transition-all duration-700 ${
+                    isAfter
+                      ? 'bg-white border-2 border-[#FFE0D6] shadow-[0_6px_20px_rgba(253,67,34,0.08)]'
+                      : 'bg-white/95 border border-[#E2E8F0] shadow-2xs'
+                  }`}
+                >
+                  {/* Card Header: Icon & Category Label */}
+                  <div className="flex items-center gap-1.5 sm:gap-2 mb-1">
+                    <div 
+                      className="w-5 h-5 sm:w-6 sm:h-6 rounded-md flex items-center justify-center shrink-0"
+                      style={{ backgroundColor: item.iconBg, color: item.iconColor }}
+                    >
+                      <IconComp className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
+                    </div>
+                    <span className="text-[9px] sm:text-[10.5px] font-extrabold uppercase tracking-wider text-[#64748B] truncate">
+                      {item.label}
+                    </span>
+                  </div>
+
+                  {/* Card Title */}
+                  <p className="text-[10.5px] sm:text-[12px] font-bold text-[#14243D] leading-tight truncate mb-1">
+                    {item.title}
+                  </p>
+
+                  {/* Status Badge (Morphs from unlinked to verified) */}
+                  <div className="flex items-center">
+                    <span 
+                      className={`text-[8.5px] sm:text-[9.5px] font-semibold px-1.5 py-0.5 rounded transition-colors duration-500 truncate ${
+                        isAfter
+                          ? 'bg-[#DCFCE7] text-[#16A34A] border border-[#BBF7D0]'
+                          : 'bg-[#F1F5F9] text-[#94A3B8] border border-[#E2E8F0]'
+                      }`}
+                    >
+                      {isAfter ? item.afterTag : item.beforeTag}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
 
         </div>
 
