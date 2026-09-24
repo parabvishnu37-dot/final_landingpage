@@ -129,6 +129,56 @@ export const VerifiedCredentialsSection: React.FC = () => {
         </div>
 
         {/* ======================================================== */}
+        {/* Open Badges 2.0 & 3.0 Supporting Block                   */}
+        {/* ======================================================== */}
+        <div className="max-w-[1100px] mx-auto mb-10 sm:mb-12">
+          <div className="rounded-2xl border border-[#DBE6F1] bg-white p-5 sm:p-7 shadow-xs">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
+              {/* Left Column: Context & Overview */}
+              <div className="lg:col-span-5">
+                <div className="inline-flex items-center gap-1.5 rounded-full bg-[#FFF0EB] border border-[#F8D1C6] px-3 py-1 text-[11px] font-extrabold uppercase tracking-wider text-[#FD4322] mb-3">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#FD4322]" />
+                  VERIFIABLE CREDENTIALS
+                </div>
+                <h3 className="text-lg sm:text-xl lg:text-[1.35rem] font-black text-[#14243D] leading-snug mb-2">
+                  Built for portable, verifiable achievements.
+                </h3>
+                <p className="text-[13px] sm:text-[13.5px] text-[#5A6B82] leading-relaxed">
+                  SOLO supports digital credentials issued using Open Badges 2.0 and 3.0, making achievements easier to verify, carry, and share across platforms.
+                </p>
+              </div>
+
+              {/* Right Column: Open Badges 2.0 & 3.0 Standards */}
+              <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                {/* Open Badges 2.0 */}
+                <div className="rounded-xl bg-[#FFF9F6] border border-[#F8D1C6]/70 p-4 flex flex-col justify-between">
+                  <div>
+                    <span className="text-[11px] font-black uppercase tracking-wider text-[#FD4322] block mb-1.5">
+                      OPEN BADGES 2.0
+                    </span>
+                    <p className="text-[12.5px] text-[#5A6B82] leading-relaxed">
+                      An established digital badge standard for representing achievements, evidence, criteria, and issuer information.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Open Badges 3.0 */}
+                <div className="rounded-xl bg-[#FFF9F6] border border-[#F8D1C6]/70 p-4 flex flex-col justify-between">
+                  <div>
+                    <span className="text-[11px] font-black uppercase tracking-wider text-[#FD4322] block mb-1.5">
+                      OPEN BADGES 3.0
+                    </span>
+                    <p className="text-[12.5px] text-[#5A6B82] leading-relaxed">
+                      A newer standard built around verifiable credentials, designed for greater interoperability across platforms.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* ======================================================== */}
         {/* Supporting Statement & CTA */}
         {/* ======================================================== */}
         <div className="flex flex-col items-center justify-center text-center max-w-2xl mx-auto space-y-4">
