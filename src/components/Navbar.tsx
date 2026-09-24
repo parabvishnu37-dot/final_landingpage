@@ -5,7 +5,7 @@ export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { label: 'Platform', href: '#platform' },
+    { label: 'Platform', href: '#profile' },
     { label: 'How It Works', href: '#how-it-works' },
     { label: 'Opportunities', href: '#opportunities' },
     { label: 'About', href: '#about' },
@@ -43,7 +43,7 @@ export const Navbar = () => {
         {/* Right: Get Started CTA */}
         <div className="hidden md:flex items-center gap-3">
           <a
-            href="https://app.thesolo.network/signin"
+            href="https://app.thesolo.network/signup"
             className="btn-primary-solo inline-flex h-10 items-center justify-center gap-1.5 rounded-xl px-5 text-[13px] font-bold text-white"
           >
             <span>Get Started</span>
@@ -80,7 +80,7 @@ export const Navbar = () => {
           </nav>
           <div className="mt-4 pt-4 border-t border-[#E3EAF1]">
             <a
-              href="#get-started"
+              href="https://app.thesolo.network/signup"
               onClick={() => setIsOpen(false)}
               className="btn-primary-solo flex h-11 items-center justify-center gap-2 rounded-xl text-[13px] font-bold text-white"
             >

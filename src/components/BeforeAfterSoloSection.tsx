@@ -10,7 +10,6 @@ import {
   GitBranch, 
   ArrowRight, 
   RotateCcw, 
-  CheckCircle2, 
   Sparkles 
 } from 'lucide-react';
 
@@ -44,9 +43,9 @@ const ELEMENT_ITEMS: ElementItem[] = [
     id: 'certificates',
     icon: Award,
     label: 'Certificates',
-    title: 'AWS Certified',
-    beforeTag: 'Local file',
-    afterTag: 'Issuer Signed',
+    title: 'Credentials',
+    beforeTag: 'Scattered',
+    afterTag: 'Connected',
     iconColor: '#DC2626',
     iconBg: '#FEF2F2',
     before: { desktopX: 42, desktopY: 6, mobileX: 38, mobileY: 6, rotate: -4 },
@@ -56,9 +55,9 @@ const ELEMENT_ITEMS: ElementItem[] = [
     id: 'skills',
     icon: Code2,
     label: 'Skills',
-    title: 'React, Python, SQL',
-    beforeTag: 'Static doc',
-    afterTag: 'Verified Skills',
+    title: 'Skill Profile',
+    beforeTag: 'Scattered',
+    afterTag: 'Connected',
     iconColor: '#EA580C',
     iconBg: '#FFF7ED',
     before: { desktopX: 86, desktopY: 10, mobileX: 82, mobileY: 15, rotate: 5 },
@@ -68,9 +67,9 @@ const ELEMENT_ITEMS: ElementItem[] = [
     id: 'projects',
     icon: FolderGit2,
     label: 'Projects',
-    title: 'Career Assistant',
-    beforeTag: 'Unlinked repo',
-    afterTag: 'Portfolio Proof',
+    title: 'Project Evidence',
+    beforeTag: 'Scattered',
+    afterTag: 'Connected',
     iconColor: '#16A34A',
     iconBg: '#F0FDF4',
     before: { desktopX: 91, desktopY: 54, mobileX: 86, mobileY: 52, rotate: -3 },
@@ -80,9 +79,9 @@ const ELEMENT_ITEMS: ElementItem[] = [
     id: 'interests',
     icon: Compass,
     label: 'Interests',
-    title: 'AI & UI/UX',
-    beforeTag: 'Unmatched',
-    afterTag: 'Role Direction',
+    title: 'Career Interests',
+    beforeTag: 'Scattered',
+    afterTag: 'Connected',
     iconColor: '#0D9488',
     iconBg: '#F0FDFA',
     before: { desktopX: 85, desktopY: 90, mobileX: 82, mobileY: 88, rotate: 4 },
@@ -92,9 +91,9 @@ const ELEMENT_ITEMS: ElementItem[] = [
     id: 'achievements',
     icon: Trophy,
     label: 'Achievements',
-    title: '1st Hackathon',
-    beforeTag: 'Unshared win',
-    afterTag: 'Recognized',
+    title: 'Achievements',
+    beforeTag: 'Scattered',
+    afterTag: 'Connected',
     iconColor: '#D97706',
     iconBg: '#FFFBEB',
     before: { desktopX: 44, desktopY: 95, mobileX: 42, mobileY: 94, rotate: -3 },
@@ -104,9 +103,9 @@ const ELEMENT_ITEMS: ElementItem[] = [
     id: 'github',
     icon: GitBranch,
     label: 'GitHub',
-    title: '124 Contribs',
-    beforeTag: 'External link',
-    afterTag: 'Code Verified',
+    title: 'Project Activity',
+    beforeTag: 'Scattered',
+    afterTag: 'Connected',
     iconColor: '#0F172A',
     iconBg: '#F8FAFC',
     before: { desktopX: 13, desktopY: 90, mobileX: 18, mobileY: 88, rotate: 4 },
@@ -116,9 +115,9 @@ const ELEMENT_ITEMS: ElementItem[] = [
     id: 'experience',
     icon: Briefcase,
     label: 'Experience',
-    title: 'Web Dev Intern',
-    beforeTag: 'Resume bullet',
-    afterTag: 'Role Evidence',
+    title: 'Work Experience',
+    beforeTag: 'Scattered',
+    afterTag: 'Connected',
     iconColor: '#7C3AED',
     iconBg: '#F5F3FF',
     before: { desktopX: 9, desktopY: 46, mobileX: 14, mobileY: 52, rotate: -5 },
@@ -128,9 +127,9 @@ const ELEMENT_ITEMS: ElementItem[] = [
     id: 'education',
     icon: GraduationCap,
     label: 'Education',
-    title: 'B.S. Comp Sci',
-    beforeTag: 'PDF transcript',
-    afterTag: 'Degree Proof',
+    title: 'Education',
+    beforeTag: 'Scattered',
+    afterTag: 'Connected',
     iconColor: '#2563EB',
     iconBg: '#EFF6FF',
     before: { desktopX: 13, desktopY: 10, mobileX: 18, mobileY: 15, rotate: 3 },
@@ -340,15 +339,14 @@ export const BeforeAfterSoloSection: React.FC = () => {
                 <div className="w-full rounded-2xl border-2 border-[#FFE0D6] bg-white p-3.5 sm:p-4 shadow-[0_16px_36px_rgba(253,67,34,0.12)]">
                   <div className="flex items-center justify-center gap-3">
                     <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#FD4322] text-white flex items-center justify-center font-black text-xs sm:text-sm shadow-xs shrink-0 ring-4 ring-[#FD4322]/15">
-                      AJ
+                      LP
                     </div>
                     <div className="text-left">
                       <div className="flex items-center gap-1.5">
-                        <span className="text-xs sm:text-[14px] font-black text-[#14243D]">Alex Johnson</span>
-                        <CheckCircle2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#16A34A]" />
+                        <span className="text-xs sm:text-[14px] font-black text-[#14243D]">Learner Profile</span>
                       </div>
                       <span className="text-[10px] sm:text-[11px] font-semibold text-[#FD4322] block">
-                        Connected SOLO Profile
+                        Connected in SOLO
                       </span>
                     </div>
                   </div>
@@ -432,7 +430,7 @@ export const BeforeAfterSoloSection: React.FC = () => {
                     <span 
                       className={`text-[8.5px] sm:text-[9.5px] font-semibold px-1.5 py-0.5 rounded transition-colors duration-500 truncate ${
                         animProgress > 0.5
-                          ? 'bg-[#DCFCE7] text-[#16A34A] border border-[#BBF7D0]'
+                          ? 'bg-[#FFF0EB] text-[#FD4322] border border-[#F8D1C6]'
                           : 'bg-[#F1F5F9] text-[#94A3B8] border border-[#E2E8F0]'
                       }`}
                     >

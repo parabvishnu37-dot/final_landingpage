@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, ArrowDown, Globe, Award, Sparkles, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, ArrowDown, Globe, GitBranch, Sparkles, CheckCircle2 } from 'lucide-react';
 
 const GitHubIcon: React.FC<{ className?: string }> = ({ className = 'w-4 h-4' }) => (
   <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -44,7 +44,7 @@ export const GitHubIntegrationSection: React.FC = () => {
 
           {/* Supporting Text */}
           <p className="text-base sm:text-[17px] text-[#5A6B82] font-normal leading-relaxed max-w-2xl mx-auto">
-            Connect GitHub and bring your real projects, activity, and skills into your SOLO profile.
+            Connect GitHub and bring your public projects, repository activity, and skills into your SOLO profile.
           </p>
         </div>
 
@@ -67,23 +67,53 @@ export const GitHubIntegrationSection: React.FC = () => {
                   <span className="text-xs font-semibold text-[#5A6B82]">OAuth Integration</span>
                 </div>
 
-                {/* Screenshot Frame */}
+                {/* Screenshot Frame with Subtle Visual Callout */}
                 <div className="w-full rounded-xl overflow-hidden bg-[#FAFBFC] border border-[#E5E7EB] p-1.5 flex items-center justify-center">
-                  <img
-                    src="/github/01_connect_github.png"
-                    alt="01 Connect GitHub - Profile showing Connect GitHub button"
-                    className="w-full h-auto max-h-[310px] object-contain rounded-lg block"
-                    loading="eager"
-                  />
+                  <div className="relative w-full overflow-hidden rounded-lg">
+                    <img
+                      src="/github/01_connect_github.png"
+                      alt="01 Connect GitHub - Profile showing Connect GitHub button"
+                      className="w-full h-auto block"
+                      loading="eager"
+                    />
+
+                    {/* Subtle thin SOLO-orange outline & soft highlight around Connect GitHub button */}
+                    <div
+                      className="absolute rounded-full border sm:border-2 border-[#FD4322] bg-[#FD4322]/10 pointer-events-none shadow-[0_0_0_2px_rgba(253,67,34,0.15)]"
+                      style={{
+                        left: '39.8%',
+                        top: '67.6%',
+                        width: '9.6%',
+                        height: '6.0%',
+                      }}
+                      aria-hidden="true"
+                    />
+
+                    {/* Small, clean orange callout label pointing toward the button */}
+                    <div
+                      className="absolute -translate-x-1/2 flex flex-col items-center pointer-events-none z-10"
+                      style={{
+                        left: '44.6%',
+                        bottom: '33.2%',
+                      }}
+                      aria-hidden="true"
+                    >
+                      <div className="inline-flex items-center gap-1 sm:gap-1.5 px-2 py-0.5 sm:px-2.5 sm:py-0.5 rounded-full bg-[#FD4322] text-white text-[9px] sm:text-[10.5px] font-extrabold uppercase tracking-wider shadow-[0_2px_8px_rgba(253,67,34,0.3)]">
+                        <span className="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-white" />
+                        <span>Connect GitHub</span>
+                      </div>
+                      <div className="w-0 h-0 border-l-[4px] border-l-transparent border-r-[4px] border-r-transparent border-t-[4px] sm:border-t-[5px] border-t-[#FD4322]" />
+                    </div>
+                  </div>
                 </div>
 
                 {/* Card Body Copy */}
                 <div className="mt-4">
-                  <p className="text-sm sm:text-[15px] font-semibold text-[#14243D] leading-snug">
-                    Connect your GitHub account from My Profile or Settings → Security &amp; Sign-up.
-                  </p>
-                  <p className="mt-1.5 text-xs text-[#5A6B82] leading-relaxed">
-                    Link your developer profile seamlessly with one click to unlock automatic project imports.
+                  <h3 className="text-sm sm:text-[15px] font-bold text-[#14243D] leading-snug mb-1">
+                    Connect your GitHub account
+                  </h3>
+                  <p className="text-xs sm:text-[13px] text-[#5A6B82] leading-relaxed">
+                    Connect GitHub from My Profile or Settings → Security &amp; Sign-up.
                   </p>
                 </div>
               </div>
@@ -92,10 +122,10 @@ export const GitHubIntegrationSection: React.FC = () => {
               <div className="mt-4 pt-3 border-t border-[#F3F4F6] flex items-center justify-between text-xs text-[#5A6B82]">
                 <span className="font-medium text-[#14243D] flex items-center gap-1.5">
                   <GitHubIcon className="w-3.5 h-3.5 text-[#FD4322]" />
-                  Direct account connection
+                  Direct GitHub connection
                 </span>
-                <span className="text-[11px] font-semibold text-[#FD4322] bg-[#FFF0EB] px-2 py-0.5 rounded-md">
-                  Instant Link
+                <span className="text-[11px] font-semibold text-[#FD4322] bg-[#FFF0EB] px-2.5 py-0.5 rounded-md">
+                  Account Link
                 </span>
               </div>
             </div>
@@ -138,14 +168,17 @@ export const GitHubIntegrationSection: React.FC = () => {
 
                 {/* Card Body Copy */}
                 <div className="mt-4">
-                  <p className="text-sm sm:text-[15px] font-semibold text-[#14243D] leading-snug">
-                    Import your public repositories directly into SOLO and review the project information before adding it to your Live Projects.
+                  <h3 className="text-sm sm:text-[15px] font-bold text-[#14243D] leading-snug mb-1">
+                    Import your public repositories
+                  </h3>
+                  <p className="text-xs sm:text-[13px] text-[#5A6B82] leading-relaxed">
+                    Select your public repositories and review the project information before adding them to your Live Projects.
                   </p>
 
                   {/* Extracted Details Tags */}
                   <div className="mt-3">
                     <span className="text-[11px] font-bold uppercase tracking-wider text-[#64748B] block mb-1.5">
-                      Extracted Project Details:
+                      Extracted Information:
                     </span>
                     <div className="flex flex-wrap gap-1.5">
                       {extractedDetails.map((detail) => (
@@ -164,11 +197,11 @@ export const GitHubIntegrationSection: React.FC = () => {
 
               {/* Bottom Note */}
               <div className="mt-4 pt-3 border-t border-[#F3F4F6] flex items-center justify-between text-xs text-[#5A6B82]">
-                <span className="text-[11.5px] italic text-[#64748B]">
-                  Public repositories only.
+                <span className="text-[11.5px] font-medium text-[#64748B]">
+                  Public repositories only
                 </span>
-                <span className="text-[11px] font-semibold text-[#5A6B82] bg-[#F1F5F9] px-2 py-0.5 rounded-md">
-                  Automatic Sync
+                <span className="text-[11px] font-semibold text-[#5A6B82] bg-[#F1F5F9] px-2.5 py-0.5 rounded-md">
+                  Select &amp; Add
                 </span>
               </div>
             </div>
@@ -188,14 +221,14 @@ export const GitHubIntegrationSection: React.FC = () => {
         <div className="flex flex-col items-center justify-center my-6 sm:my-8 pointer-events-none">
           <div className="h-5 w-[1.5px] bg-gradient-to-b from-transparent to-[#FD4322]/50" />
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#FFF0EB] border border-[#F8D1C6] text-[11px] font-extrabold uppercase tracking-wider text-[#FD4322] my-1 shadow-2xs">
-            <span>TRANSFORMS INTO VERIFIED EVIDENCE</span>
+            <span>BRINGS EVIDENCE TO YOUR PROFILE</span>
             <ArrowDown className="w-3.5 h-3.5" />
           </div>
           <div className="h-5 w-[1.5px] bg-gradient-to-b from-[#FD4322]/50 to-transparent" />
         </div>
 
         {/* ======================================================== */}
-        {/* Step 03 / Result: Live Projects as Verified Evidence     */}
+        {/* Step 03 / Result: Project Evidence                       */}
         {/* ======================================================== */}
         <div className="relative max-w-[1360px] mx-auto">
           <div className="rounded-[22px] border border-[#DBE6F1] bg-white p-5 sm:p-7 lg:p-8 shadow-[0_16px_40px_rgba(20,36,61,0.06)] group hover:border-[#FD4322]/40 transition-colors">
@@ -204,11 +237,11 @@ export const GitHubIntegrationSection: React.FC = () => {
               <div className="flex items-center gap-2.5">
                 <span className="inline-flex items-center gap-1.5 rounded-full bg-[#FFF0EB] border border-[#F8D1C6] px-3.5 py-1 text-[11px] font-extrabold uppercase tracking-wider text-[#FD4322]">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#FD4322]" />
-                  RESULT — LIVE PROJECTS AS VERIFIED EVIDENCE
+                  RESULT — PROJECT EVIDENCE
                 </span>
               </div>
               <span className="text-xs font-semibold text-[#5A6B82]">
-                Verified Project Credential &amp; Proof
+                Live Projects Showcase
               </span>
             </div>
 
@@ -216,41 +249,41 @@ export const GitHubIntegrationSection: React.FC = () => {
             <div className="w-full rounded-xl overflow-hidden bg-[#FAFBFC] border border-[#E5E7EB] p-2 sm:p-3 flex items-center justify-center">
               <img
                 src="/github/03_project_evidence.png"
-                alt="Result: Live Projects as Verified Evidence - Imported project card with Openbadge"
+                alt="Result: Project Evidence - Live Projects with repository and deployed links"
                 className="w-full h-auto max-h-[460px] object-contain rounded-lg block"
                 loading="eager"
               />
             </div>
 
-            {/* Highlight Banner with Exact Statement */}
+            {/* Highlight Banner with Clean Factual Statement */}
             <div className="mt-6 p-4 sm:p-5 rounded-xl bg-[#FFF9F6] border border-[#F8D1C6]/80 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
               <div className="flex items-start gap-3.5">
                 <div className="w-9 h-9 rounded-xl bg-[#FFF0EB] border border-[#F8D1C6] flex items-center justify-center shrink-0 text-[#FD4322] mt-0.5">
-                  <Sparkles className="w-5 h-5" />
+                  <Sparkles className="w-4 h-4" />
                 </div>
                 <div>
                   <h4 className="text-sm font-bold text-[#14243D] mb-1">
-                    Real code becomes verifiable profile evidence
+                    Add project evidence to your profile
                   </h4>
                   <p className="text-xs sm:text-[14px] text-[#5A6B82] leading-relaxed max-w-2xl">
-                    Repository and deployed links provide project evidence, while contributors, activity, and recent commits add context to the project.
+                    Repository and deployed links provide project references, while contributors, activity, recent commits, and other project details add context.
                   </p>
                 </div>
               </div>
 
-              {/* Evidence Pills matching the UI */}
+              {/* Simple Supporting Pills */}
               <div className="flex flex-wrap items-center gap-2 shrink-0">
                 <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white border border-[#E2E8F0] text-xs font-semibold text-[#14243D] shadow-2xs">
                   <GitHubIcon className="w-3.5 h-3.5 text-[#24292F]" />
-                  Repository Links
+                  Repository Link
                 </span>
                 <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white border border-[#E2E8F0] text-xs font-semibold text-[#14243D] shadow-2xs">
                   <Globe className="w-3.5 h-3.5 text-[#0284C7]" />
-                  Deployed Demo
+                  Deployed Link
                 </span>
-                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#FFF0EB] border border-[#F8D1C6] text-xs font-bold text-[#FD4322] shadow-2xs">
-                  <Award className="w-3.5 h-3.5 text-[#FD4322]" />
-                  Openbadge Credential
+                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white border border-[#E2E8F0] text-xs font-semibold text-[#14243D] shadow-2xs">
+                  <GitBranch className="w-3.5 h-3.5 text-[#FD4322]" />
+                  Project Activity
                 </span>
               </div>
             </div>
