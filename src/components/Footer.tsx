@@ -22,7 +22,7 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-white border-t border-[#E3EAF1] text-[#14243D]">
+    <footer className="bg-[#F6E2D5] border-t border-[#E8D0C0] text-[#14243D]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 mb-12">
           
@@ -39,7 +39,7 @@ export const Footer: React.FC = () => {
               />
             </a>
 
-            <p className="text-[14px] text-[#5A6B82] leading-relaxed max-w-sm">
+            <p className="text-[14px] text-[#52637A] leading-relaxed max-w-sm">
               Skills, Opportunities, Learning and Outcome
             </p>
           </div>
@@ -54,7 +54,7 @@ export const Footer: React.FC = () => {
                 <li key={item.name}>
                   <a
                     href={item.href}
-                    className="text-[14px] text-[#5A6B82] hover:text-[#FD4322] transition-colors"
+                    className="text-[14px] text-[#52637A] hover:text-[#FD4322] transition-colors"
                   >
                     {item.name}
                   </a>
@@ -73,7 +73,7 @@ export const Footer: React.FC = () => {
                 <li key={item.name}>
                   <a
                     href={item.href}
-                    className="text-[14px] text-[#5A6B82] hover:text-[#FD4322] transition-colors"
+                    className="text-[14px] text-[#52637A] hover:text-[#FD4322] transition-colors"
                   >
                     {item.name}
                   </a>
@@ -92,7 +92,7 @@ export const Footer: React.FC = () => {
                 <li key={item.name}>
                   <a
                     href={item.href}
-                    className="text-[14px] text-[#5A6B82] hover:text-[#FD4322] transition-colors"
+                    className="text-[14px] text-[#52637A] hover:text-[#FD4322] transition-colors"
                   >
                     {item.name}
                   </a>
@@ -104,7 +104,7 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Row */}
-        <div className="pt-8 border-t border-[#EEF2F6] flex flex-col sm:flex-row items-center justify-between gap-4 text-[13px] text-[#64748B]">
+        <div className="pt-8 border-t border-[#E8D0C0] flex flex-col sm:flex-row items-center justify-between gap-4 text-[13px] text-[#52637A]">
           <div>
             &copy; 2026 SOLO Network. All rights reserved.
           </div>
@@ -112,13 +112,13 @@ export const Footer: React.FC = () => {
           <div className="flex items-center gap-6">
             <a
               href="#privacy"
-              className="text-[#64748B] hover:text-[#FD4322] transition-colors"
+              className="text-[#52637A] hover:text-[#FD4322] transition-colors"
             >
               Privacy Policy
             </a>
             <a
               href="#terms"
-              className="text-[#64748B] hover:text-[#FD4322] transition-colors"
+              className="text-[#52637A] hover:text-[#FD4322] transition-colors"
             >
               Terms of Use
             </a>
