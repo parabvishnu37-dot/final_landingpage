@@ -7,6 +7,7 @@ import {
   User,
   Loader2,
 } from 'lucide-react';
+import { MarkdownRenderer } from './MarkdownRenderer';
 import './AIChatbot.css';
 
 type Message = {
@@ -374,7 +375,11 @@ The learner journey:
                       : 'ai-message-bubble-assistant'
                   }`}
                 >
-                  {message.content}
+                  {message.role === 'assistant' ? (
+                    <MarkdownRenderer content={message.content} />
+                  ) : (
+                    message.content
+                  )}
                 </div>
 
                 {message.role === 'user' && (
